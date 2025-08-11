@@ -1,0 +1,33 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Periódica Interactiva</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tabla Periódica Interactiva</h1>
+    </header>
+
+    <main>
+        <div id="tabla-periodica">
+            <!-- Imagen de la tabla periódica muda -->
+            <img src="img/tabla_muda.png" alt="Tabla Periódica Muda" id="tabla-imagen">
+            
+            <!-- Ejemplo de casilla interactiva (Hidrógeno) -->
+            <div class="casilla" style="top: 100px; left: 50px;" data-elemento="H">
+                <div class="contenido-oculto">
+                    <span class="nombre-elemento">Hidrógeno</span>
+                    <span class="simbolo-elemento">H</span>
+                    <span class="numero-atomico">Número atómico: 1</span>
+                </div>
+            </div>
+            
+            <!-- Más casillas se añadirán aquí dinámicamente -->
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+</body>
+</html>
