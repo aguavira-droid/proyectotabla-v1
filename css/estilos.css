@@ -1,0 +1,71 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedores principales del layout */
+#contenedor-principal {
+    display: flex;
+    gap: 30px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contenedor-tabla {
+    position: relative;
+    line-height: 0;
+}
+
+/* Elementos de la tabla */
+#imagen-tabla {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+#canvas-interactivo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Contenedor de interacción para la imagen/texto */
+#interaccion-elemento {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #007bff;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Estilos para el texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Clase para ocultar elementos */
+.oculto {
+    opacity: 0;
+    pointer-events: none;
+}
