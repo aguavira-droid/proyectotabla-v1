@@ -8,10 +8,10 @@
     {
       "simbolo": "H",
       "nombre": "Hidrógeno",
-      "posicion_x": 88,
-      "posicion_y": 105,
-      "ancho": 104,
-      "alto": 106,
+      "posicion_x": -12,
+      "posicion_y": 149,
+      "ancho": 110,
+      "alto": 110,
       "imagen_amigo": "assets/amigos/placeholder1.jpg",
       "propiedades": {
         "numero_atomico": 1,
@@ -34,8 +34,8 @@
     {
       "simbolo": "Li",
       "nombre": "Litio",
-      "posicion_x": 88,
-      "posicion_y": 206,
+      "posicion_x": -6,
+      "posicion_y": 254,
       "ancho": 104,
       "alto": 106,
       "imagen_amigo": "assets/amigos/placeholder3.jpg",
@@ -47,8 +47,8 @@
     {
       "simbolo": "Be",
       "nombre": "Berilio",
-      "posicion_x": 188,
-      "posicion_y": 206,
+      "posicion_x": 90,
+      "posicion_y": 254,
       "ancho": 104,
       "alto": 106,
       "imagen_amigo": "assets/amigos/placeholder4.jpg",
