@@ -1,33 +1,35 @@
 const fs = require('fs');
 const path = require('path');
 
-// Configuración de la tabla
-const anchoRec = 110;
-const altoRec = 110;
-const inicioX = -12;
-const inicioY = 149;
+/* ========= Configuración de la tabla (ajustaremos después si hace falta) ========= */
+const anchoRec = 110;   // ancho de cada “recuadro” de la tabla
+const altoRec  = 110;   // alto de cada “recuadro”
+const inicioX  = -12;   // offset X desde el borde izquierdo de la imagen
+const inicioY  = 149;   // offset Y desde la parte superior de la imagen
 
-// Definimos filas y columnas
+// Bloque principal (períodos 1–7 en la tabla superior)
 const filasPrincipales = 7;
-const colsPrincipales = 18;
-const filasEspeciales = 2;
-const colsEspeciales = 14;
-const inicioFilaEspecial = 9;
-const inicioColEspecial = 5;
+const colsPrincipales  = 18;
 
-// Lista de elementos de ejemplo (solo con símbolos y nombres)
+// Bloques especiales (lantánidos y actínidos, 2 filas en la parte inferior)
+const filasEspeciales  = 2;
+const colsEspeciales   = 14;
+const inicioFilaEspecial = 9; // la fila “visual” donde empiezan (contando desde 1)
+const inicioColEspecial  = 5; // la columna “visual” donde empiezan (contando desde 1)
+
+/* ========= Elementos (por ahora, ejemplo corto; luego pondremos los 118) ========= */
 const elementos = [
-  { simbolo: "H", nombre: "Hidrógeno" },
+  { simbolo: "H",  nombre: "Hidrógeno" },
   { simbolo: "He", nombre: "Helio" },
   { simbolo: "Li", nombre: "Litio" },
   { simbolo: "Be", nombre: "Berilio" },
-  // ... agrega todos los elementos que necesites
+  // TODO: aquí añadiremos el resto hasta 118
 ];
 
-// Array donde se guardarán los elementos con posiciones
-let elementosConPosicion = [];
+/* ========= Generación de posiciones ========= */
+const elementosConPosicion = [];
 
-// Generamos posiciones principales
+// Generar posiciones del bloque principal (7x18)
 for (let fila = 0; fila < filasPrincipales; fila++) {
   for (let col = 0; col < colsPrincipales; col++) {
     const idx = fila * colsPrincipales + col;
@@ -35,7 +37,7 @@ for (let fila = 0; fila < filasPrincipales; fila++) {
 
     elementosConPosicion.push({
       ...elementos[idx],
-      posicion_x: inicioX + col * anchoRec,
+      posicion_x: inicioX + col  * anchoRec,
       posicion_y: inicioY + fila * altoRec,
       ancho: anchoRec,
       alto: altoRec,
@@ -45,7 +47,7 @@ for (let fila = 0; fila < filasPrincipales; fila++) {
   }
 }
 
-// Generamos posiciones especiales (filas 9-10)
+// Generar posiciones de las filas especiales (lantánidos/actínidos)
 for (let fila = 0; fila < filasEspeciales; fila++) {
   for (let col = 0; col < colsEspeciales; col++) {
     const idx = filasPrincipales * colsPrincipales + fila * colsEspeciales + col;
@@ -63,8 +65,15 @@ for (let fila = 0; fila < filasEspeciales; fila++) {
   }
 }
 
-// Guardamos en elementos.json dentro de la carpeta data
+/* ========= Envolvemos en la estructura que tu app espera ========= */
+const tablaPeriodica = {
+  titulo: "Tabla Periódica Interactiva",
+  dimensiones: { ancho: 1916, alto: 1800 },
+  elementos: elementosConPosicion
+};
+
+/* ========= Guardado en data/elementos.json ========= */
 const rutaArchivo = path.join(__dirname, 'elementos.json');
-fs.writeFileSync(rutaArchivo, JSON.stringify(elementosConPosicion, null, 2));
+fs.writeFileSync(rutaArchivo, JSON.stringify(tablaPeriodica, null, 2), 'utf-8');
 
 console.log(`Archivo elementos.json generado con ${elementosConPosicion.length} elementos.`);
