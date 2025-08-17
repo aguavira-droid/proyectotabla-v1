@@ -1,21 +1,171 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-s cale=1.0">
-    <title>Tabla Periódica Interactiva</title>
-    <link rel="stylesheet" href="css/estilos.css">
+  <meta charset="UTF-8">
+  <title>Tabla Periódica Interactiva</title>
+  <style>
+    body {
+      margin: 0;
+      background: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    #canvas {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    #tip {
+      position: absolute;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 4px 6px;
+      border-radius: 6px;
+      pointer-events: none;
+      display: none;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-    <div id="contenedor-principal">
-        <div id="contenedor-tabla">
-            <img id="imagen-tabla" src="img/tabla_muda.png" alt="Tabla periódica muda">
-            <canvas id="canvas-interactivo"></canvas>
-            
-            <div id="interaccion-elemento" class="oculto"></div>
-        </div>
-    </div>
-    
-    <script src="js/mapa.js"></script>
+  <canvas id="canvas"></canvas>
+  <div id="tip"></div>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    const tip = document.getElementById("tip");
+
+    let data, rectsEscalados = [];
+    let scale = 1, offsetX = 0, offsetY = 0;
+    let hoveredImg = null;
+    let selected = null; // elemento seleccionado con click
+
+    fetch("data/elementos.json")
+      .then(r => r.json())
+      .then(json => {
+        data = json;
+        resizeCanvas();
+        draw();
+      });
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      if (!data) return;
+
+      const w = data.dimensiones.ancho;
+      const h = data.dimensiones.alto;
+      const scaleX = canvas.width / w;
+      const scaleY = canvas.height / h;
+      scale = Math.min(scaleX, scaleY);
+
+      offsetX = (canvas.width - w * scale) / 2;
+      offsetY = (canvas.height - h * scale) / 2;
+
+      rectsEscalados = data.elementos.map(el => {
+        return {
+          x: offsetX + el.posicion_x * scale,
+          y: offsetY + el.posicion_y * scale,
+          w: el.ancho * scale,
+          h: el.alto * scale,
+          el: el
+        };
+      });
+
+      draw();
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      rectsEscalados.forEach(r => {
+        ctx.strokeStyle = "#00f";
+        ctx.lineWidth = 1;
+        ctx.strokeRect(r.x, r.y, r.w, r.h);
+
+        // Hover → imagen del amigo
+        if (hoveredImg && hoveredImg.simbolo === r.el.simbolo) {
+          ctx.drawImage(hoveredImg.img, r.x, r.y, r.w, r.h);
+        }
+
+        // Click → ficha de datos en el recuadro
+        if (selected && selected.simbolo === r.el.simbolo) {
+          ctx.fillStyle = "rgba(255,255,255,0.9)";
+          ctx.fillRect(r.x, r.y, r.w, r.h);
+
+          ctx.fillStyle = "#000";
+          ctx.font = `${Math.floor(r.h * 0.25)}px sans-serif`;
+          ctx.textAlign = "center";
+          ctx.fillText(r.el.simbolo, r.x + r.w / 2, r.y + r.h * 0.4);
+
+          ctx.font = `${Math.floor(r.h * 0.15)}px sans-serif`;
+          ctx.fillText(r.el.nombre, r.x + r.w / 2, r.y + r.h * 0.65);
+          if (r.el.propiedades.numero_atomico) {
+            ctx.fillText("Z=" + r.el.propiedades.numero_atomico, r.x + r.w / 2, r.y + r.h * 0.85);
+          }
+        }
+      });
+    }
+
+    function hitTest(px, py) {
+      for (let i = 0; i < rectsEscalados.length; i++) {
+        const r = rectsEscalados[i];
+        if (px >= r.x && px <= r.x + r.w && py >= r.y && py <= r.y + r.h) {
+          return i;
+        }
+      }
+      return -1;
+    }
+
+    // Hover: cargar imagen
+    canvas.addEventListener("mousemove", e => {
+      const idx = hitTest(e.clientX, e.clientY);
+      if (idx >= 0) {
+        const r = rectsEscalados[idx];
+        tip.innerHTML = `${r.el.simbolo} - ${r.el.nombre}`;
+        tip.style.left = (e.clientX + 10) + "px";
+        tip.style.top = (e.clientY + 10) + "px";
+        tip.style.display = "block";
+
+        const img = new Image();
+        img.src = r.el.imagen_amigo;
+        img.onload = () => {
+          hoveredImg = { simbolo: r.el.simbolo, img: img };
+          draw();
+        };
+      } else {
+        tip.style.display = "none";
+        hoveredImg = null;
+        draw();
+      }
+    });
+
+    // Click: mostrar ficha en la casilla
+    canvas.addEventListener("click", e => {
+      const idx = hitTest(e.clientX, e.clientY);
+      if (idx >= 0) {
+        selected = rectsEscalados[idx].el;
+      } else {
+        selected = null;
+      }
+      draw();
+    });
+
+    // Doble clic: placeholder de mundos virtuales
+    canvas.addEventListener("dblclick", e => {
+      const idx = hitTest(e.clientX, e.clientY);
+      if (idx >= 0) {
+        const el = rectsEscalados[idx].el;
+        alert(`🌌 Mundo virtual de ${el.nombre}`);
+      }
+    });
+
+    window.addEventListener("resize", resizeCanvas);
+  </script>
 </body>
 </html>
