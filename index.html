@@ -84,9 +84,9 @@
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       rectsEscalados.forEach(r => {
-        ctx.strokeStyle = "#00f";
-        ctx.lineWidth = 1;
-        ctx.strokeRect(r.x, r.y, r.w, r.h);
+        ctx.strokeStyle = "#00f";// DESMARCADORES DE LÍNEAS AZULES ANULADAS POR MÍ
+        ctx.lineWidth = 1;// DESMARCADORES DE LÍNEAS AZULES ANULADAS POR MÍ
+        ctx.strokeRect(r.x, r.y, r.w, r.h);// DESMARCADORES DE LÍNEAS AZULES ANULADAS POR MÍ
 
         // Hover → imagen del amigo
         if (hoveredImg && hoveredImg.simbolo === r.el.simbolo) {
@@ -127,6 +127,10 @@
       const idx = hitTest(e.clientX, e.clientY);
       if (idx >= 0) {
         const r = rectsEscalados[idx];
+        // Si estoy sobre otro elemento distinto al seleccionado, lo borro: creado por mí.
+          if (selected && selected.simbolo !== r.el.simbolo) {
+          selected = null;
+         }
         tip.innerHTML = `${r.el.simbolo} - ${r.el.nombre}`;
         tip.style.left = (e.clientX + 10) + "px";
         tip.style.top = (e.clientY + 10) + "px";
@@ -141,6 +145,7 @@
       } else {
         tip.style.display = "none";
         hoveredImg = null;
+        selected = null; // borrar la ficha si salimos de la casilla.Llínea añadida por MÍ
         draw();
       }
     });
@@ -157,13 +162,33 @@
     });
 
     // Doble clic: placeholder de mundos virtuales
-    canvas.addEventListener("dblclick", e => {
-      const idx = hitTest(e.clientX, e.clientY);
-      if (idx >= 0) {
-        const el = rectsEscalados[idx].el;
-        alert(`🌌 Mundo virtual de ${el.nombre}`);
-      }
-    });
+canvas.addEventListener("dblclick", e => {
+  const idx = hitTest(e.clientX, e.clientY);
+  if (idx >= 0) {
+    const r = rectsEscalados[idx];
+
+    // Crear recuadro flotante
+    const box = document.createElement("div");
+    box.innerHTML = `🌌 Mundo virtual de <b>${r.el.nombre}</b>`;
+    box.style.position = "absolute";
+    box.style.left = (r.x + r.w / 2 - 80) + "px"; // centrado
+    box.style.top = (r.y + r.h + 10) + "px";      // justo debajo
+    box.style.width = "160px";
+    box.style.background = "rgba(0,0,0,0.85)";
+    box.style.color = "white";
+    box.style.padding = "6px 8px";
+    box.style.borderRadius = "8px";
+    box.style.textAlign = "center";
+    box.style.fontSize = "14px";
+    box.style.zIndex = 1000;
+
+    document.body.appendChild(box);
+
+    // Desaparece solo después de 2 segundos
+    setTimeout(() => box.remove(), 2000);
+  }
+});
+
 
     window.addEventListener("resize", resizeCanvas);
   </script>
