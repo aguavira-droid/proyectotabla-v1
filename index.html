@@ -18,8 +18,6 @@
       display: block;
       max-width: 100%;
       max-height: 100%;
-      position: relative;
-      z-index: 1;
     }
     #tip {
       position: absolute;
@@ -30,42 +28,23 @@
       pointer-events: none;
       display: none;
       font-size: 14px;
-      z-index: 2;
-    }
-    #toggleButton {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #444;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
-      z-index: 2;
-    }
-    #toggleButton:hover {
-      background: #666;
     }
   </style>
 </head>
 <body>
   <canvas id="canvas"></canvas>
   <div id="tip"></div>
-  <button id="toggleButton">Mostrar Imágenes</button>
 
   <script>
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
     const tip = document.getElementById("tip");
-    const toggleButton = document.getElementById("toggleButton");
 
     let data, rectsEscalados = [];
     let scale = 1, offsetX = 0, offsetY = 0;
     let hoveredImg = null;
     let selected = null;
-    let mode = 0; // 0 = vacío, 1 = imágenes, 2 = info
+    let displayMode = 0; // 0 = solo tabla, 1 = mostrar imágenes, 2 = mostrar info completa
 
     fetch("data/elementos.json")
       .then(r => r.json())
@@ -78,13 +57,18 @@
     function resizeCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+
       if (!data) return;
 
       const w = data.dimensiones.ancho;
       const h = data.dimensiones.alto;
       const scaleX = canvas.width / w;
       const scaleY = canvas.height / h;
-      scale = Math.min(scaleX, scaleY);
+      scale = Math.min(scaleX, scaleY) * 1.4; // aumento 40% para móviles
+
+      // Ajuste para que no se salga de la pantalla
+      if (w * scale > canvas.width) scale = canvas.width / w;
+      if (h * scale > canvas.height) scale = canvas.height / h;
 
       offsetX = (canvas.width - w * scale) / 2;
       offsetY = (canvas.height - h * scale) / 2;
@@ -106,16 +90,24 @@
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       rectsEscalados.forEach(r => {
-        // Hover → imagen del amigo
-        if (mode === 1 || (hoveredImg && hoveredImg.simbolo === r.el.simbolo)) {
+        ctx.strokeStyle = "#00f";
+        ctx.lineWidth = 1;
+        ctx.strokeRect(r.x, r.y, r.w, r.h);
+
+        // Mostrar imágenes si corresponde
+        if ((displayMode === 1 || displayMode === 2) && r.el.imagen_amigo) {
           const img = new Image();
           img.src = r.el.imagen_amigo;
           img.onload = () => ctx.drawImage(img, r.x, r.y, r.w, r.h);
-          ctx.drawImage(img, r.x, r.y, r.w, r.h);
         }
 
-        // Click o modo info → ficha de datos
-        if ((mode === 2 || (selected && selected.simbolo === r.el.simbolo))) {
+        // Hover → imagen del amigo si displayMode=0
+        if (hoveredImg && hoveredImg.simbolo === r.el.simbolo && displayMode === 0) {
+          ctx.drawImage(hoveredImg.img, r.x, r.y, r.w, r.h);
+        }
+
+        // Click o displayMode=2 → ficha de datos
+        if ((selected && selected.simbolo === r.el.simbolo) || displayMode === 2) {
           ctx.fillStyle = "rgba(255,255,255,0.9)";
           ctx.fillRect(r.x, r.y, r.w, r.h);
 
@@ -136,41 +128,52 @@
     function hitTest(px, py) {
       for (let i = 0; i < rectsEscalados.length; i++) {
         const r = rectsEscalados[i];
-        if (px >= r.x && px <= r.x + r.w && py >= r.y && py <= r.y + r.h) return i;
+        if (px >= r.x && px <= r.x + r.w && py >= r.y && py <= r.y + r.h) {
+          return i;
+        }
       }
       return -1;
     }
 
+    // Hover
     canvas.addEventListener("mousemove", e => {
       const idx = hitTest(e.clientX, e.clientY);
       if (idx >= 0) {
         const r = rectsEscalados[idx];
+        if (selected && selected.simbolo !== r.el.simbolo) selected = null;
         tip.innerHTML = `${r.el.simbolo} - ${r.el.nombre}`;
         tip.style.left = (e.clientX + 10) + "px";
         tip.style.top = (e.clientY + 10) + "px";
         tip.style.display = "block";
 
-        const img = new Image();
-        img.src = r.el.imagen_amigo;
-        img.onload = () => {
-          hoveredImg = { simbolo: r.el.simbolo, img: img };
-          draw();
-        };
+        if (displayMode === 0) {
+          const img = new Image();
+          img.src = r.el.imagen_amigo;
+          img.onload = () => {
+            hoveredImg = { simbolo: r.el.simbolo, img: img };
+            draw();
+          };
+        }
       } else {
         tip.style.display = "none";
         hoveredImg = null;
-        if (mode === 0) selected = null;
+        if (displayMode === 0) selected = null;
         draw();
       }
     });
 
+    // Click
     canvas.addEventListener("click", e => {
       const idx = hitTest(e.clientX, e.clientY);
-      if (idx >= 0) selected = rectsEscalados[idx].el;
-      else selected = null;
+      if (idx >= 0) {
+        selected = rectsEscalados[idx].el;
+      } else {
+        selected = null;
+      }
       draw();
     });
 
+    // Doble clic
     canvas.addEventListener("dblclick", e => {
       const idx = hitTest(e.clientX, e.clientY);
       if (idx >= 0) {
@@ -193,15 +196,30 @@
       }
     });
 
-    toggleButton.addEventListener("click", () => {
-      mode = (mode + 1) % 3; // 0 → 1 → 2 → 0
-      if (mode === 0) toggleButton.innerText = "Mostrar Imágenes";
-      if (mode === 1) toggleButton.innerText = "Mostrar Información";
-      if (mode === 2) toggleButton.innerText = "Vaciar Tabla";
+    window.addEventListener("resize", resizeCanvas);
+
+    // Botón superior derecho
+    const toggleBtn = document.createElement("button");
+    toggleBtn.innerText = "Mostrar imágenes";
+    toggleBtn.style.position = "fixed";
+    toggleBtn.style.top = "10px";
+    toggleBtn.style.right = "10px";
+    toggleBtn.style.zIndex = 1000;
+    toggleBtn.style.padding = "8px 12px";
+    toggleBtn.style.background = "#444";
+    toggleBtn.style.color = "#fff";
+    toggleBtn.style.border = "none";
+    toggleBtn.style.borderRadius = "6px";
+    toggleBtn.style.cursor = "pointer";
+    document.body.appendChild(toggleBtn);
+
+    toggleBtn.addEventListener("click", () => {
+      displayMode = (displayMode + 1) % 3;
+      if (displayMode === 0) toggleBtn.innerText = "Mostrar imágenes";
+      else if (displayMode === 1) toggleBtn.innerText = "Mostrar info";
+      else toggleBtn.innerText = "Tabla vacía";
       draw();
     });
-
-    window.addEventListener("resize", resizeCanvas);
   </script>
 </body>
 </html>
