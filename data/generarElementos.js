@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs');//archivo generarElementos.js
 const path = require('path');
 
 // Configuración de los recuadros
@@ -162,7 +162,7 @@ tablaPrincipal.forEach((fila, filaIdx) => {
       posicion_y: inicioY + filaIdx * altoRec,
       ancho: anchoRec,
       alto: altoRec,
-      imagen_amigo: `assets/amigos/placeholder${elementoIdx + 1}.jpg`,
+      imagen_amigo: `assets/amigos/placeholder${elementoIdx + 1}.png`,
       propiedades: {}
     });
   });
@@ -179,7 +179,7 @@ tablaTierrasRaras.forEach((fila, filaIdx) => {
       posicion_y: inicioY + (filaIdx + 8) * altoRec, // desplazamiento de 7 filas
       ancho: anchoRec,
       alto: altoRec,
-      imagen_amigo: `assets/amigos/placeholder${elementoIdx + 1}.jpg`,
+      imagen_amigo: `assets/amigos/placeholder${elementoIdx + 1}.png`,
       propiedades: {}
     });
   });

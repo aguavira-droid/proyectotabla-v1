@@ -12,7 +12,7 @@
       "posicion_y": 149,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder1.jpg",
+      "imagen_amigo": "assets/amigos/placeholder1.png",
       "propiedades": {}
     },
     {
@@ -22,7 +22,7 @@
       "posicion_y": 149,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder2.jpg",
+      "imagen_amigo": "assets/amigos/placeholder2.png",
       "propiedades": {}
     },
     {
@@ -32,7 +32,7 @@
       "posicion_y": 259,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder3.jpg",
+      "imagen_amigo": "assets/amigos/placeholder3.png",
       "propiedades": {}
     },
     {
@@ -42,7 +42,7 @@
       "posicion_y": 259,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder4.jpg",
+      "imagen_amigo": "assets/amigos/placeholder4.png",
       "propiedades": {}
     },
     {
@@ -52,7 +52,7 @@
       "posicion_y": 259,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder5.jpg",
+      "imagen_amigo": "assets/amigos/placeholder5.png",
       "propiedades": {}
     },
     {
@@ -62,7 +62,7 @@
       "posicion_y": 259,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder6.jpg",
+      "imagen_amigo": "assets/amigos/placeholder6.png",
       "propiedades": {}
     },
     {
@@ -72,7 +72,7 @@
       "posicion_y": 259,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder7.jpg",
+      "imagen_amigo": "assets/amigos/placeholder7.png",
       "propiedades": {}
     },
     {
@@ -82,7 +82,7 @@
       "posicion_y": 259,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder8.jpg",
+      "imagen_amigo": "assets/amigos/placeholder8.png",
       "propiedades": {}
     },
     {
@@ -92,7 +92,7 @@
       "posicion_y": 259,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder9.jpg",
+      "imagen_amigo": "assets/amigos/placeholder9.png",
       "propiedades": {}
     },
     {
@@ -102,7 +102,7 @@
       "posicion_y": 259,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder10.jpg",
+      "imagen_amigo": "assets/amigos/placeholder10.png",
       "propiedades": {}
     },
     {
@@ -112,7 +112,7 @@
       "posicion_y": 369,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder11.jpg",
+      "imagen_amigo": "assets/amigos/placeholder11.png",
       "propiedades": {}
     },
     {
@@ -122,7 +122,7 @@
       "posicion_y": 369,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder12.jpg",
+      "imagen_amigo": "assets/amigos/placeholder12.png",
       "propiedades": {}
     },
     {
@@ -132,7 +132,7 @@
       "posicion_y": 369,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder13.jpg",
+      "imagen_amigo": "assets/amigos/placeholder13.png",
       "propiedades": {}
     },
     {
@@ -142,7 +142,7 @@
       "posicion_y": 369,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder14.jpg",
+      "imagen_amigo": "assets/amigos/placeholder14.png",
       "propiedades": {}
     },
     {
@@ -152,7 +152,7 @@
       "posicion_y": 369,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder15.jpg",
+      "imagen_amigo": "assets/amigos/placeholder15.png",
       "propiedades": {}
     },
     {
@@ -162,7 +162,7 @@
       "posicion_y": 369,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder16.jpg",
+      "imagen_amigo": "assets/amigos/placeholder16.png",
       "propiedades": {}
     },
     {
@@ -172,7 +172,7 @@
       "posicion_y": 369,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder17.jpg",
+      "imagen_amigo": "assets/amigos/placeholder17.png",
       "propiedades": {}
     },
     {
@@ -182,7 +182,7 @@
       "posicion_y": 369,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder18.jpg",
+      "imagen_amigo": "assets/amigos/placeholder18.png",
       "propiedades": {}
     },
     {
@@ -192,7 +192,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder19.jpg",
+      "imagen_amigo": "assets/amigos/placeholder19.png",
       "propiedades": {}
     },
     {
@@ -202,7 +202,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder20.jpg",
+      "imagen_amigo": "assets/amigos/placeholder20.png",
       "propiedades": {}
     },
     {
@@ -212,7 +212,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder21.jpg",
+      "imagen_amigo": "assets/amigos/placeholder21.png",
       "propiedades": {}
     },
     {
@@ -222,7 +222,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder22.jpg",
+      "imagen_amigo": "assets/amigos/placeholder22.png",
       "propiedades": {}
     },
     {
@@ -232,7 +232,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder23.jpg",
+      "imagen_amigo": "assets/amigos/placeholder23.png",
       "propiedades": {}
     },
     {
@@ -242,7 +242,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder24.jpg",
+      "imagen_amigo": "assets/amigos/placeholder24.png",
       "propiedades": {}
     },
     {
@@ -252,7 +252,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder25.jpg",
+      "imagen_amigo": "assets/amigos/placeholder25.png",
       "propiedades": {}
     },
     {
@@ -262,7 +262,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder26.jpg",
+      "imagen_amigo": "assets/amigos/placeholder26.png",
       "propiedades": {}
     },
     {
@@ -272,7 +272,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder27.jpg",
+      "imagen_amigo": "assets/amigos/placeholder27.png",
       "propiedades": {}
     },
     {
@@ -282,7 +282,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder28.jpg",
+      "imagen_amigo": "assets/amigos/placeholder28.png",
       "propiedades": {}
     },
     {
@@ -292,7 +292,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder29.jpg",
+      "imagen_amigo": "assets/amigos/placeholder29.png",
       "propiedades": {}
     },
     {
@@ -302,7 +302,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder30.jpg",
+      "imagen_amigo": "assets/amigos/placeholder30.png",
       "propiedades": {}
     },
     {
@@ -312,7 +312,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder31.jpg",
+      "imagen_amigo": "assets/amigos/placeholder31.png",
       "propiedades": {}
     },
     {
@@ -322,7 +322,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder32.jpg",
+      "imagen_amigo": "assets/amigos/placeholder32.png",
       "propiedades": {}
     },
     {
@@ -332,7 +332,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder33.jpg",
+      "imagen_amigo": "assets/amigos/placeholder33.png",
       "propiedades": {}
     },
     {
@@ -342,7 +342,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder34.jpg",
+      "imagen_amigo": "assets/amigos/placeholder34.png",
       "propiedades": {}
     },
     {
@@ -352,7 +352,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder35.jpg",
+      "imagen_amigo": "assets/amigos/placeholder35.png",
       "propiedades": {}
     },
     {
@@ -362,7 +362,7 @@
       "posicion_y": 479,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder36.jpg",
+      "imagen_amigo": "assets/amigos/placeholder36.png",
       "propiedades": {}
     },
     {
@@ -372,7 +372,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder37.jpg",
+      "imagen_amigo": "assets/amigos/placeholder37.png",
       "propiedades": {}
     },
     {
@@ -382,7 +382,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder38.jpg",
+      "imagen_amigo": "assets/amigos/placeholder38.png",
       "propiedades": {}
     },
     {
@@ -392,7 +392,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder39.jpg",
+      "imagen_amigo": "assets/amigos/placeholder39.png",
       "propiedades": {}
     },
     {
@@ -402,7 +402,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder40.jpg",
+      "imagen_amigo": "assets/amigos/placeholder40.png",
       "propiedades": {}
     },
     {
@@ -412,7 +412,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder41.jpg",
+      "imagen_amigo": "assets/amigos/placeholder41.png",
       "propiedades": {}
     },
     {
@@ -422,7 +422,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder42.jpg",
+      "imagen_amigo": "assets/amigos/placeholder42.png",
       "propiedades": {}
     },
     {
@@ -432,7 +432,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder43.jpg",
+      "imagen_amigo": "assets/amigos/placeholder43.png",
       "propiedades": {}
     },
     {
@@ -442,7 +442,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder44.jpg",
+      "imagen_amigo": "assets/amigos/placeholder44.png",
       "propiedades": {}
     },
     {
@@ -452,7 +452,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder45.jpg",
+      "imagen_amigo": "assets/amigos/placeholder45.png",
       "propiedades": {}
     },
     {
@@ -462,7 +462,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder46.jpg",
+      "imagen_amigo": "assets/amigos/placeholder46.png",
       "propiedades": {}
     },
     {
@@ -472,7 +472,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder47.jpg",
+      "imagen_amigo": "assets/amigos/placeholder47.png",
       "propiedades": {}
     },
     {
@@ -482,7 +482,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder48.jpg",
+      "imagen_amigo": "assets/amigos/placeholder48.png",
       "propiedades": {}
     },
     {
@@ -492,7 +492,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder49.jpg",
+      "imagen_amigo": "assets/amigos/placeholder49.png",
       "propiedades": {}
     },
     {
@@ -502,7 +502,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder50.jpg",
+      "imagen_amigo": "assets/amigos/placeholder50.png",
       "propiedades": {}
     },
     {
@@ -512,7 +512,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder51.jpg",
+      "imagen_amigo": "assets/amigos/placeholder51.png",
       "propiedades": {}
     },
     {
@@ -522,7 +522,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder52.jpg",
+      "imagen_amigo": "assets/amigos/placeholder52.png",
       "propiedades": {}
     },
     {
@@ -532,7 +532,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder53.jpg",
+      "imagen_amigo": "assets/amigos/placeholder53.png",
       "propiedades": {}
     },
     {
@@ -542,7 +542,7 @@
       "posicion_y": 589,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder54.jpg",
+      "imagen_amigo": "assets/amigos/placeholder54.png",
       "propiedades": {}
     },
     {
@@ -552,7 +552,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder55.jpg",
+      "imagen_amigo": "assets/amigos/placeholder55.png",
       "propiedades": {}
     },
     {
@@ -562,7 +562,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder56.jpg",
+      "imagen_amigo": "assets/amigos/placeholder56.png",
       "propiedades": {}
     },
     {
@@ -572,7 +572,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder71.jpg",
+      "imagen_amigo": "assets/amigos/placeholder71.png",
       "propiedades": {}
     },
     {
@@ -582,7 +582,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder72.jpg",
+      "imagen_amigo": "assets/amigos/placeholder72.png",
       "propiedades": {}
     },
     {
@@ -592,7 +592,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder73.jpg",
+      "imagen_amigo": "assets/amigos/placeholder73.png",
       "propiedades": {}
     },
     {
@@ -602,7 +602,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder74.jpg",
+      "imagen_amigo": "assets/amigos/placeholder74.png",
       "propiedades": {}
     },
     {
@@ -612,7 +612,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder75.jpg",
+      "imagen_amigo": "assets/amigos/placeholder75.png",
       "propiedades": {}
     },
     {
@@ -622,7 +622,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder76.jpg",
+      "imagen_amigo": "assets/amigos/placeholder76.png",
       "propiedades": {}
     },
     {
@@ -632,7 +632,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder77.jpg",
+      "imagen_amigo": "assets/amigos/placeholder77.png",
       "propiedades": {}
     },
     {
@@ -642,7 +642,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder78.jpg",
+      "imagen_amigo": "assets/amigos/placeholder78.png",
       "propiedades": {}
     },
     {
@@ -652,7 +652,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder79.jpg",
+      "imagen_amigo": "assets/amigos/placeholder79.png",
       "propiedades": {}
     },
     {
@@ -662,7 +662,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder80.jpg",
+      "imagen_amigo": "assets/amigos/placeholder80.png",
       "propiedades": {}
     },
     {
@@ -672,7 +672,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder81.jpg",
+      "imagen_amigo": "assets/amigos/placeholder81.png",
       "propiedades": {}
     },
     {
@@ -682,7 +682,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder82.jpg",
+      "imagen_amigo": "assets/amigos/placeholder82.png",
       "propiedades": {}
     },
     {
@@ -692,7 +692,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder83.jpg",
+      "imagen_amigo": "assets/amigos/placeholder83.png",
       "propiedades": {}
     },
     {
@@ -702,7 +702,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder84.jpg",
+      "imagen_amigo": "assets/amigos/placeholder84.png",
       "propiedades": {}
     },
     {
@@ -712,7 +712,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder85.jpg",
+      "imagen_amigo": "assets/amigos/placeholder85.png",
       "propiedades": {}
     },
     {
@@ -722,7 +722,7 @@
       "posicion_y": 699,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder86.jpg",
+      "imagen_amigo": "assets/amigos/placeholder86.png",
       "propiedades": {}
     },
     {
@@ -732,7 +732,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder87.jpg",
+      "imagen_amigo": "assets/amigos/placeholder87.png",
       "propiedades": {}
     },
     {
@@ -742,7 +742,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder88.jpg",
+      "imagen_amigo": "assets/amigos/placeholder88.png",
       "propiedades": {}
     },
     {
@@ -752,7 +752,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder103.jpg",
+      "imagen_amigo": "assets/amigos/placeholder103.png",
       "propiedades": {}
     },
     {
@@ -762,7 +762,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder104.jpg",
+      "imagen_amigo": "assets/amigos/placeholder104.png",
       "propiedades": {}
     },
     {
@@ -772,7 +772,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder105.jpg",
+      "imagen_amigo": "assets/amigos/placeholder105.png",
       "propiedades": {}
     },
     {
@@ -782,7 +782,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder106.jpg",
+      "imagen_amigo": "assets/amigos/placeholder106.png",
       "propiedades": {}
     },
     {
@@ -792,7 +792,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder107.jpg",
+      "imagen_amigo": "assets/amigos/placeholder107.png",
       "propiedades": {}
     },
     {
@@ -802,7 +802,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder108.jpg",
+      "imagen_amigo": "assets/amigos/placeholder108.png",
       "propiedades": {}
     },
     {
@@ -812,7 +812,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder109.jpg",
+      "imagen_amigo": "assets/amigos/placeholder109.png",
       "propiedades": {}
     },
     {
@@ -822,7 +822,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder110.jpg",
+      "imagen_amigo": "assets/amigos/placeholder110.png",
       "propiedades": {}
     },
     {
@@ -832,7 +832,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder111.jpg",
+      "imagen_amigo": "assets/amigos/placeholder111.png",
       "propiedades": {}
     },
     {
@@ -842,7 +842,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder112.jpg",
+      "imagen_amigo": "assets/amigos/placeholder112.png",
       "propiedades": {}
     },
     {
@@ -852,7 +852,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder113.jpg",
+      "imagen_amigo": "assets/amigos/placeholder113.png",
       "propiedades": {}
     },
     {
@@ -862,7 +862,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder114.jpg",
+      "imagen_amigo": "assets/amigos/placeholder114.png",
       "propiedades": {}
     },
     {
@@ -872,7 +872,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder115.jpg",
+      "imagen_amigo": "assets/amigos/placeholder115.png",
       "propiedades": {}
     },
     {
@@ -882,7 +882,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder116.jpg",
+      "imagen_amigo": "assets/amigos/placeholder116.png",
       "propiedades": {}
     },
     {
@@ -892,7 +892,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder117.jpg",
+      "imagen_amigo": "assets/amigos/placeholder117.png",
       "propiedades": {}
     },
     {
@@ -902,7 +902,7 @@
       "posicion_y": 809,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder118.jpg",
+      "imagen_amigo": "assets/amigos/placeholder118.png",
       "propiedades": {}
     },
     {
@@ -912,7 +912,7 @@
       "posicion_y": 1029,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder57.jpg",
+      "imagen_amigo": "assets/amigos/placeholder57.png",
       "propiedades": {}
     },
     {
@@ -922,7 +922,7 @@
       "posicion_y": 1029,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder58.jpg",
+      "imagen_amigo": "assets/amigos/placeholder58.png",
       "propiedades": {}
     },
     {
@@ -932,7 +932,7 @@
       "posicion_y": 1029,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder59.jpg",
+      "imagen_amigo": "assets/amigos/placeholder59.png",
       "propiedades": {}
     },
     {
@@ -942,7 +942,7 @@
       "posicion_y": 1029,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder60.jpg",
+      "imagen_amigo": "assets/amigos/placeholder60.png",
       "propiedades": {}
     },
     {
@@ -952,7 +952,7 @@
       "posicion_y": 1029,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder61.jpg",
+      "imagen_amigo": "assets/amigos/placeholder61.png",
       "propiedades": {}
     },
     {
@@ -962,7 +962,7 @@
       "posicion_y": 1029,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder62.jpg",
+      "imagen_amigo": "assets/amigos/placeholder62.png",
       "propiedades": {}
     },
     {
@@ -972,7 +972,7 @@
       "posicion_y": 1029,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder63.jpg",
+      "imagen_amigo": "assets/amigos/placeholder63.png",
       "propiedades": {}
     },
     {
@@ -982,7 +982,7 @@
       "posicion_y": 1029,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder64.jpg",
+      "imagen_amigo": "assets/amigos/placeholder64.png",
       "propiedades": {}
     },
     {
@@ -992,7 +992,7 @@
       "posicion_y": 1029,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder65.jpg",
+      "imagen_amigo": "assets/amigos/placeholder65.png",
       "propiedades": {}
     },
     {
@@ -1002,7 +1002,7 @@
       "posicion_y": 1029,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder66.jpg",
+      "imagen_amigo": "assets/amigos/placeholder66.png",
       "propiedades": {}
     },
     {
@@ -1012,7 +1012,7 @@
       "posicion_y": 1029,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder67.jpg",
+      "imagen_amigo": "assets/amigos/placeholder67.png",
       "propiedades": {}
     },
     {
@@ -1022,7 +1022,7 @@
       "posicion_y": 1029,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder68.jpg",
+      "imagen_amigo": "assets/amigos/placeholder68.png",
       "propiedades": {}
     },
     {
@@ -1032,7 +1032,7 @@
       "posicion_y": 1029,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder69.jpg",
+      "imagen_amigo": "assets/amigos/placeholder69.png",
       "propiedades": {}
     },
     {
@@ -1042,7 +1042,7 @@
       "posicion_y": 1029,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder70.jpg",
+      "imagen_amigo": "assets/amigos/placeholder70.png",
       "propiedades": {}
     },
     {
@@ -1052,7 +1052,7 @@
       "posicion_y": 1139,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder89.jpg",
+      "imagen_amigo": "assets/amigos/placeholder89.png",
       "propiedades": {}
     },
     {
@@ -1062,7 +1062,7 @@
       "posicion_y": 1139,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder90.jpg",
+      "imagen_amigo": "assets/amigos/placeholder90.png",
       "propiedades": {}
     },
     {
@@ -1072,7 +1072,7 @@
       "posicion_y": 1139,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder91.jpg",
+      "imagen_amigo": "assets/amigos/placeholder91.png",
       "propiedades": {}
     },
     {
@@ -1082,7 +1082,7 @@
       "posicion_y": 1139,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder92.jpg",
+      "imagen_amigo": "assets/amigos/placeholder92.png",
       "propiedades": {}
     },
     {
@@ -1092,7 +1092,7 @@
       "posicion_y": 1139,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder93.jpg",
+      "imagen_amigo": "assets/amigos/placeholder93.png",
       "propiedades": {}
     },
     {
@@ -1102,7 +1102,7 @@
       "posicion_y": 1139,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder94.jpg",
+      "imagen_amigo": "assets/amigos/placeholder94.png",
       "propiedades": {}
     },
     {
@@ -1112,7 +1112,7 @@
       "posicion_y": 1139,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder95.jpg",
+      "imagen_amigo": "assets/amigos/placeholder95.png",
       "propiedades": {}
     },
     {
@@ -1122,7 +1122,7 @@
       "posicion_y": 1139,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder96.jpg",
+      "imagen_amigo": "assets/amigos/placeholder96.png",
       "propiedades": {}
     },
     {
@@ -1132,7 +1132,7 @@
       "posicion_y": 1139,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder97.jpg",
+      "imagen_amigo": "assets/amigos/placeholder97.png",
       "propiedades": {}
     },
     {
@@ -1142,7 +1142,7 @@
       "posicion_y": 1139,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder98.jpg",
+      "imagen_amigo": "assets/amigos/placeholder98.png",
       "propiedades": {}
     },
     {
@@ -1152,7 +1152,7 @@
       "posicion_y": 1139,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder99.jpg",
+      "imagen_amigo": "assets/amigos/placeholder99.png",
       "propiedades": {}
     },
     {
@@ -1162,7 +1162,7 @@
       "posicion_y": 1139,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder100.jpg",
+      "imagen_amigo": "assets/amigos/placeholder100.png",
       "propiedades": {}
     },
     {
@@ -1172,7 +1172,7 @@
       "posicion_y": 1139,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder101.jpg",
+      "imagen_amigo": "assets/amigos/placeholder101.png",
       "propiedades": {}
     },
     {
@@ -1182,7 +1182,7 @@
       "posicion_y": 1139,
       "ancho": 110,
       "alto": 110,
-      "imagen_amigo": "assets/amigos/placeholder102.jpg",
+      "imagen_amigo": "assets/amigos/placeholder102.png",
       "propiedades": {}
     }
   ]
