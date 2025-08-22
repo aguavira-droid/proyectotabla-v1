@@ -1,83 +1,197 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Tabla Periódica Interactiva</title>
+
+  <!-- Hace que móvil/tablet interpreten bien el layout -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
-    :root { color-scheme: dark; }
+    :root {
+      color-scheme: dark;
+
+      /* Tamaño base de las previsualizaciones (mitad que 320) */
+      --preview-size: 160px;
+      --ui-gap: 10px;
+
+      /* Botón / top offsets */
+      --btn-top: 10px;
+      --btn-right: 10px;
+      --fixed-top: 50px; /* debajo del botón */
+    }
+
+    /* Escalado sutil en pantallas muy grandes */
+    @media (min-width: 1400px) {
+      :root {
+        --preview-size: 200px;
+      }
+    }
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+      :root {
+        --preview-size: 180px; /* un poco más grande para legibilidad en tablet */
+        --btn-top: 8px;
+        --btn-right: 8px;
+        --fixed-top: 46px;
+      }
+    }
+
+    /* Móvil */
+    @media (max-width: 768px) {
+      :root {
+        --preview-size: 150px; /* compactas pero visibles */
+        --btn-top: 6px;
+        --btn-right: 6px;
+        --fixed-top: 44px;
+        --ui-gap: 8px;
+      }
+    }
+
     body {
       margin: 0;
       background: #222 url('img/Aliens1.png') no-repeat center center;
       background-size: cover;
       height: 100vh;
       overflow: hidden;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
+
     #canvas {
       display: block;
       width: 100vw;
       height: 100vh;
     }
+
     #tip {
       position: fixed;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.85);
       color: white;
-      padding: 4px 6px;
-      border-radius: 6px;
+      padding: 6px 8px;
+      border-radius: 8px;
       pointer-events: none;
       display: none;
-      font-size: 14px;
+      font-size: 13px;
       z-index: 1000;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      white-space: nowrap;
     }
+
     #modeBtn {
       position: fixed;
-      top: 10px;
-      right: 10px;
+      top: var(--btn-top);
+      right: var(--btn-right);
       z-index: 1100;
-      padding: 8px 12px;
-      background: #444;
+      padding: 10px 14px;
+      background: linear-gradient(180deg, #4c4c4c, #3a3a3a);
       color: #fff;
-      border: none;
-      border-radius: 6px;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
       cursor: pointer;
       font-size: 14px;
+      letter-spacing: .2px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+      transition: transform .1s ease, filter .2s ease;
     }
-    /* Ventana fija de imágenes */
+    #modeBtn:hover { filter: brightness(1.08); }
+    #modeBtn:active { transform: translateY(1px) scale(0.99); }
+
+    /* Ventana fija de imágenes (derecha) */
     #fixedPreview {
       position: fixed;
-      top: 50px; 
-      right: 10px;
-      width: 320px;  
-      height: 320px; 
-      border: 2px solid #fff;
-      background: rgba(0,0,0,0.7);
+      top: var(--fixed-top);
+      right: var(--btn-right);
+      width: var(--preview-size);
+      height: var(--preview-size);
+      border: 1px solid rgba(255,255,255,0.7);
+      background: rgba(0,0,0,0.72);
       z-index: 1200;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      padding: 4px;
+      padding: 6px;
       box-sizing: border-box;
+      border-radius: 12px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+      overflow: hidden;
     }
     #fixedPreview img {
       max-width: 100%;
       max-height: 100%;
+      object-fit: contain;
+      border-radius: 6px;
     }
-    /* Nueva ventana de información textual */
+    #fixedPreview .caption {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #ddd;
+      text-align: center;
+    }
+
+    /* Ventana fija de información (debajo de la de imágenes) */
     #infoPreview {
       position: fixed;
-      top: 380px; /* justo debajo de #fixedPreview (320 + 50 + 10px separación) */
-      right: 10px;
-      width: 320px;
-      height: 320px;
-      border: 2px solid #fff;
-      background: rgba(0,0,0,0.7);
+      top: calc(var(--fixed-top) + var(--preview-size) + var(--ui-gap));
+      right: var(--btn-right);
+      width: var(--preview-size);
+      height: var(--preview-size);
+      border: 1px solid rgba(255,255,255,0.7);
+      background: rgba(0,0,0,0.72);
       color: #fff;
       z-index: 1200;
       padding: 10px;
       box-sizing: border-box;
       overflow-y: auto;
+      font-size: 13px;
+      line-height: 1.35;
+      border-radius: 12px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+    }
+    #infoPreview h3 {
+      margin: 0 0 6px 0;
       font-size: 14px;
-      line-height: 1.3;
+      line-height: 1.2;
+      color: #fff;
+    }
+    #infoPreview p {
+      margin: 3px 0;
+      color: #ddd;
+    }
+    #infoPreview strong {
+      color: #fff;
+    }
+
+    /* En móvil mantenemos a la derecha, una debajo de otra (ya lo hace el top calc). Aseguramos anchura visible */
+    @media (max-width: 768px) {
+      #fixedPreview,
+      #infoPreview {
+        width: min(44vw, var(--preview-size));
+      }
+    }
+
+    /* Toast del doble clic */
+    .toast {
+      position: fixed;
+      z-index: 1300;
+      background: rgba(0,0,0,0.86);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.12);
+      pointer-events: none;
+      transform: translateY(4px);
+      opacity: 0;
+      animation: toastIn .18s ease-out forwards;
+    }
+    @keyframes toastIn {
+      to { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
@@ -100,6 +214,7 @@
     let rectsEscalados = [];
     let scale = 1, offsetX = 0, offsetY = 0;
 
+    // 0 = tabla vacía, 1 = todas imágenes, 2 = toda info
     let displayMode = 0;
     let hoveredIdx = -1;
     let selectedIdx = -1;
@@ -107,17 +222,12 @@
     const imageCache = new Map();
     let dirty = true;
 
-    let tierrasRarasY = null;
-
+    // Cargar datos
     fetch("data/elementos.json")
       .then(r => r.json())
       .then(json => {
         data = json;
         preloadAllImages(json.elementos);
-
-        const la = json.elementos.find(e => e.simbolo === "La");
-        if (la) tierrasRarasY = la.posicion_y;
-
         resizeCanvas();
         requestAnimationFrame(drawLoop);
       });
@@ -174,17 +284,18 @@
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       rectsEscalados.forEach((r, i) => {
+        // rejilla
         ctx.strokeStyle = "#00f";
         ctx.lineWidth = 1;
         ctx.strokeRect(r.x, r.y, r.w, r.h);
 
-        if (displayMode === 0) {
+        if (displayMode === 0) {           // tabla vacía
           if (i === hoveredIdx) drawImageFromCache(r);
           if (i === selectedIdx) drawInfoCard(r);
-        } else if (displayMode === 1) {
+        } else if (displayMode === 1) {    // todas imágenes
           drawImageFromCache(r);
           if (i === selectedIdx) drawInfoCard(r);
-        } else if (displayMode === 2) {
+        } else if (displayMode === 2) {    // toda info
           drawInfoCard(r);
           if (i === hoveredIdx) drawImageFromCache(r);
         }
@@ -202,13 +313,13 @@
     }
 
     function drawInfoCard(r) {
-      ctx.fillStyle = "rgba(255,255,255,0.9)";
+      ctx.fillStyle = "rgba(255,255,255,0.92)";
       ctx.fillRect(r.x, r.y, r.w, r.h);
       ctx.fillStyle = "#000";
       ctx.textAlign = "center";
-      ctx.font = `${Math.floor(r.h * 0.25)}px sans-serif`;
+      ctx.font = `${Math.floor(r.h * 0.25)}px ui-sans-serif, system-ui, -apple-system`;
       ctx.fillText(r.el.simbolo, r.x + r.w / 2, r.y + r.h * 0.4);
-      ctx.font = `${Math.floor(r.h * 0.15)}px sans-serif`;
+      ctx.font = `${Math.floor(r.h * 0.15)}px ui-sans-serif, system-ui, -apple-system`;
       ctx.fillText(r.el.nombre, r.x + r.w / 2, r.y + r.h * 0.65);
       if (r.el.propiedades?.numero_atomico) {
         ctx.fillText("Z=" + r.el.propiedades.numero_atomico, r.x + r.w / 2, r.y + r.h * 0.85);
@@ -223,6 +334,7 @@
       return -1;
     }
 
+    // Hover
     canvas.addEventListener("mousemove", e => {
       const idx = hitTest(e.clientX, e.clientY);
       if (idx !== hoveredIdx) {
@@ -250,10 +362,39 @@
       dirty = true;
     });
 
+    // Click: seleccionar casilla (para mostrar info sobre la celda)
     canvas.addEventListener("click", e => {
       const idx = hitTest(e.clientX, e.clientY);
       selectedIdx = (idx >= 0 ? idx : -1);
       dirty = true;
+    });
+
+    // Doble clic: toast "entrada al mundo virtual"
+    canvas.addEventListener("dblclick", e => {
+      const idx = hitTest(e.clientX, e.clientY);
+      if (idx < 0) return;
+
+      const r = rectsEscalados[idx];
+      const el = r.el;
+      const label = `Entrada al mundo virtual de ${el.nombre}`;
+
+      // Posición del toast: justo debajo del recuadro, centrado
+      const left = Math.max(8, Math.min(window.innerWidth - 280, r.x + r.w / 2 - 140));
+      const top  = Math.min(window.innerHeight - 48, r.y + r.h + 10);
+
+      const box = document.createElement("div");
+      box.className = "toast";
+      box.style.left = left + "px";
+      box.style.top  = top + "px";
+      box.innerHTML = `🌌 ${label}`;
+      document.body.appendChild(box);
+
+      setTimeout(() => {
+        box.style.transition = "opacity .18s ease, transform .18s ease";
+        box.style.opacity = "0";
+        box.style.transform = "translateY(6px)";
+        setTimeout(() => box.remove(), 220);
+      }, 1600);
     });
 
     window.addEventListener("resize", () => {
@@ -265,40 +406,44 @@
 
     modeBtn.addEventListener("click", () => {
       displayMode = (displayMode + 1) % 3;
-      modeBtn.textContent = displayMode === 0 ? "Mostrar imágenes" :
-                            displayMode === 1 ? "Mostrar info" : "Tabla vacía";
+      modeBtn.textContent =
+        displayMode === 0 ? "Mostrar imágenes" :
+        displayMode === 1 ? "Mostrar info"     :
+                            "Tabla vacía";
       dirty = true;
     });
 
-    // Actualiza la ventana superior (imágenes)
+    // Ventana superior (imágenes)
     function updateFixedPreview() {
       if (hoveredIdx >= 0) {
         const el = rectsEscalados[hoveredIdx].el;
         const img = imageCache.get(el.imagen_amigo);
         if (img && img.complete) {
-          fixedPreview.innerHTML = `<img src="${el.imagen_amigo}" alt="${el.nombre}"><div>${el.nombre}</div>`;
+          fixedPreview.innerHTML =
+            `<img src="${el.imagen_amigo}" alt="${el.nombre}"><div class="caption">${el.nombre}</div>`;
         } else {
-          fixedPreview.textContent = el.simbolo;
+          fixedPreview.innerHTML = `<div class="caption">${el.simbolo}</div>`;
         }
       } else {
         fixedPreview.innerHTML = "";
       }
     }
 
-    // Actualiza la ventana inferior (información textual)
+    // Ventana inferior (información textual)
     function updateInfoPreview() {
       let el = null;
       if (selectedIdx >= 0) el = rectsEscalados[selectedIdx].el;
       else if (hoveredIdx >= 0) el = rectsEscalados[hoveredIdx].el;
 
       if (el) {
+        const p = el.propiedades || {};
         infoPreview.innerHTML = `
-          <h3>${el.nombre} (${el.simbolo})</h3>
-          <p><strong>Número atómico:</strong> ${el.propiedades.numero_atomico || 'N/A'}</p>
-          <p><strong>Masa atómica:</strong> ${el.propiedades.masa_atomica || 'N/A'}</p>
-          <p><strong>Configuración electrónica:</strong> ${el.propiedades.configuracion_electronica || 'N/A'}</p>
-          <p><strong>Grupo:</strong> ${el.propiedades.grupo || 'N/A'}</p>
-          <p><strong>Periodo:</strong> ${el.propiedades.periodo || 'N/A'}</p>
+          <h3>${el.nombre} <small>(${el.simbolo})</small></h3>
+          <p><strong>Número atómico:</strong> ${p.numero_atomico ?? 'N/A'}</p>
+          <p><strong>Masa atómica:</strong> ${p.masa_atomica ?? 'N/A'}</p>
+          <p><strong>Configuración electrónica:</strong> ${p.configuracion_electronica ?? 'N/A'}</p>
+          <p><strong>Grupo:</strong> ${p.grupo ?? 'N/A'}</p>
+          <p><strong>Periodo:</strong> ${p.periodo ?? 'N/A'}</p>
         `;
       } else {
         infoPreview.innerHTML = '';
