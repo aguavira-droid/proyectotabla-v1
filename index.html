@@ -1,104 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Tabla Periódica Interactiva</title>
+  <meta charset="UTF-8" />
+  <title>Tabla Periódica Interactiva — Optimizada 23" Full HD</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
-    :root {
-      color-scheme: dark;
-      --PREVIEW-W: 160px;   /* ancho base de previsualización */
-      --VERT: 1.2;          /* proporción vertical (altura = ancho * VERT) */
+    :root{
+      --VERT: 1.2;          /* proporción vertical (alto = ancho * VERT) */
+      --PREVIEW-W: 200px;   /* ancho base de las previsualizaciones (desktop) */
+      --PREVIEW-GAP: 10px;
     }
-    body {
-      margin: 0;
-      background: #222 url('img/Aliens1.png') no-repeat center center;
-      background-size: cover;
-      height: 100vh;
-      overflow: hidden;
-      font-family: sans-serif;
+    /* responsivo: ajusta ancho preview en pantallas pequeñas */
+    @media (max-width: 1024px){ :root{ --PREVIEW-W: 160px; } }
+    @media (max-width: 768px){  :root{ --PREVIEW-W: 140px; } }
+    @media (max-width: 480px){  :root{ --PREVIEW-W: 110px; } }
+
+    html,body{ height:100%; margin:0; font-family:system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; background:#111 url('img/Aliens1.png') center/cover no-repeat; color:#fff; }
+    #canvas{ display:block; width:100vw; height:100vh; }
+    #tip{
+      position:fixed; pointer-events:none; display:none;
+      background:rgba(0,0,0,0.8); color:#fff; padding:6px 8px; border-radius:6px;
+      font-size:13px; z-index:1205;
     }
-    #canvas {
-      display: block;
-      width: 100vw;
-      height: 100vh;
-    }
-    #tip {
-      position: fixed;
-      background: rgba(0,0,0,0.8);
-      color: white;
-      padding: 4px 6px;
-      border-radius: 6px;
-      pointer-events: none;
-      display: none;
-      font-size: 14px;
-      z-index: 1000;
-    }
-    #modeBtn {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      z-index: 1100;
-      padding: 8px 12px;
-      background: #444;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    /* Ventana fija de imágenes */
-    #fixedPreview {
-      position: fixed;
-      top: 50px; 
-      right: 10px;
-      width: var(--PREVIEW-W);
-      height: calc(var(--PREVIEW-W) * var(--VERT));
-      border: 2px solid #fff;
-      background: rgba(0,0,0,0.7);
-      z-index: 1200;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6px;
-      box-sizing: border-box;
-    }
-    #fixedPreview img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-    /* Ventana fija de info */
-    #infoPreview {
-      position: fixed;
-      top: calc(50px + var(--PREVIEW-W) * var(--VERT) + 10px);
-      right: 10px;
-      width: var(--PREVIEW-W);
-      height: calc(var(--PREVIEW-W) * var(--VERT));
-      border: 2px solid #fff;
-      background: rgba(0,0,0,0.7);
-      color: #fff;
-      z-index: 1200;
-      padding: 10px;
-      box-sizing: border-box;
-      overflow-y: auto;
-      font-size: 12px;
-      line-height: 1.35;
+    #modeBtn{
+      position:fixed; top:12px; right:12px; z-index:1210;
+      background:#2b2b2b; color:#fff; border:1px solid rgba(255,255,255,0.06);
+      padding:8px 12px; border-radius:8px; cursor:pointer; font-size:14px;
     }
 
-    /* Responsivo: en pantallas pequeñas reducimos el ancho */
-    @media (max-width: 768px) {
-      :root {
-        --PREVIEW-W: 120px;
-      }
-      #modeBtn {
-        font-size: 12px;
-        padding: 6px 10px;
-      }
+    /* previsualización imagen (solo imagen, sin texto) */
+    #fixedPreview{
+      position:fixed; z-index:1200;
+      width:var(--PREVIEW-W);
+      height:calc(var(--PREVIEW-W) * var(--VERT));
+      background:rgba(0,0,0,0.65); border:2px solid rgba(255,255,255,0.08);
+      display:flex; align-items:center; justify-content:center; overflow:hidden;
+      border-radius:8px; box-sizing:border-box;
     }
-    @media (max-width: 480px) {
-      :root {
-        --PREVIEW-W: 100px;
-      }
+    #fixedPreview img{ width:100%; height:100%; object-fit:contain; display:block; }
+
+    /* previsualización info (texto; se adapta y reduce font si es necesario) */
+    #infoPreview{
+      position:fixed; z-index:1200;
+      width:var(--PREVIEW-W);
+      max-height:calc(var(--PREVIEW-W) * var(--VERT));
+      background:rgba(0,0,0,0.66); border:2px solid rgba(255,255,255,0.06);
+      color:#fff; padding:10px; box-sizing:border-box; border-radius:8px; overflow:hidden;
+      font-size:13px; line-height:1.3;
+    }
+    /* cuadro flotante "entrada mundo virtual" */
+    .world-entry {
+      position:fixed; z-index:1220;
+      background:linear-gradient(180deg,#0008,#000c); color:#fff;
+      padding:8px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 8px 24px rgba(0,0,0,0.6); font-weight:600; font-size:14px;
+      pointer-events:none;
     }
   </style>
 </head>
@@ -106,224 +62,329 @@
   <canvas id="canvas"></canvas>
   <div id="tip"></div>
   <button id="modeBtn">Mostrar imágenes</button>
-  <div id="fixedPreview"></div>
-  <div id="infoPreview"></div>
+
+  <div id="fixedPreview" aria-hidden="true"></div>
+  <div id="infoPreview" aria-hidden="true"></div>
 
   <script>
-    const canvas = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
-    const tip = document.getElementById("tip");
-    const modeBtn = document.getElementById("modeBtn");
-    const fixedPreview = document.getElementById("fixedPreview");
-    const infoPreview = document.getElementById("infoPreview");
+  /* ----------------------- CONFIGURACIÓN (cambia aquí) ----------------------- */
+  const DESIRED_CELL_W = 100;            // ancho objetivo por celda en px (para 23" FullHD propuesta)
+  // const VERT = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--VERT')) || 1.2;
+  /* -------------------------------------------------------------------------- */
 
-    let data;
-    let rectsEscalados = [];
-    let scale = 1, offsetX = 0, offsetY = 0;
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  const tip = document.getElementById('tip');
+  const modeBtn = document.getElementById('modeBtn');
+  const fixedPreview = document.getElementById('fixedPreview');
+  const infoPreview = document.getElementById('infoPreview');
 
-    let displayMode = 0;
-    let hoveredIdx = -1;
-    let selectedIdx = -1;
+  let data = null;
+  let rectsEscalados = [];
+  let scale = 1, offsetX = 0, offsetY = 0;
+  let displayMode = 0; // 0 vacía, 1 imágenes, 2 info
+  let hoveredIdx = -1, selectedIdx = -1;
+  const imageCache = new Map();
+  let dirty = true;
 
-    const imageCache = new Map();
-    let dirty = true;
+  const CSS_VERT = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--VERT')) || 1.2;
+  function getPreviewW() {
+    const v = getComputedStyle(document.documentElement).getPropertyValue('--PREVIEW-W').trim();
+    return v.endsWith('px') ? parseFloat(v) : 200;
+  }
 
-    let tierrasRarasY = null;
-    const VERT = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--VERT")) || 1;
-
-    fetch("data/elementos.json")
-      .then(r => r.json())
-      .then(json => {
-        data = json;
-        preloadAllImages(json.elementos);
-
-        const la = json.elementos.find(e => e.simbolo === "La");
-        if (la) tierrasRarasY = la.posicion_y;
-
-        resizeCanvas();
-        requestAnimationFrame(drawLoop);
-      });
-
-    function preloadAllImages(elements) {
-      const seen = new Set();
-      elements.forEach(el => {
-        const url = el.imagen_amigo;
-        if (!url || seen.has(url)) return;
-        seen.add(url);
-        const img = new Image();
-        img.src = url;
-        img.onload = () => { dirty = true; };
-        imageCache.set(url, img);
-      });
-    }
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      if (!data) return;
-
-      const w = data.dimensiones.ancho;
-      const h = data.dimensiones.alto * VERT;
-
-      const scaleX = canvas.width / w;
-      const scaleY = canvas.height / h;
-      scale = Math.min(scaleX, scaleY);
-
-      offsetX = (canvas.width - w * scale) / 2;
-      offsetY = (canvas.height - h * scale) / 2;
-
-      rectsEscalados = data.elementos.map(el => ({
-        x: offsetX + el.posicion_x * scale,
-        y: offsetY + el.posicion_y * scale * VERT,
-        w: el.ancho * scale,
-        h: el.alto * scale * VERT,
-        el
-      }));
-
-      dirty = true;
-    }
-
-    function drawLoop() {
-      if (dirty) {
-        draw();
-        dirty = false;
-      }
-      requestAnimationFrame(drawLoop);
-    }
-
-    function draw() {
-      if (!data) return;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      rectsEscalados.forEach((r, i) => {
-        ctx.strokeStyle = "#00f";
-        ctx.lineWidth = 1;
-        ctx.strokeRect(r.x, r.y, r.w, r.h);
-
-        if (displayMode === 0) {
-          if (i === hoveredIdx) drawImageFromCache(r);
-          if (i === selectedIdx) drawInfoCard(r);
-        } else if (displayMode === 1) {
-          drawImageFromCache(r);
-          if (i === selectedIdx) drawInfoCard(r);
-        } else if (displayMode === 2) {
-          drawInfoCard(r);
-          if (i === hoveredIdx) drawImageFromCache(r);
-        }
-      });
-
-      updateFixedPreview();
-      updateInfoPreview();
-    }
-
-    function drawImageFromCache(r) {
-      const img = imageCache.get(r.el.imagen_amigo);
-      if (!img) return;
-      if (img.complete) ctx.drawImage(img, r.x, r.y, r.w, r.h);
-      else img.onload = () => { dirty = true; };
-    }
-
-    function drawInfoCard(r) {
-      ctx.fillStyle = "rgba(255,255,255,0.9)";
-      ctx.fillRect(r.x, r.y, r.w, r.h);
-      ctx.fillStyle = "#000";
-      ctx.textAlign = "center";
-      ctx.font = `${Math.floor(r.h * 0.25)}px sans-serif`;
-      ctx.fillText(r.el.simbolo, r.x + r.w / 2, r.y + r.h * 0.4);
-      ctx.font = `${Math.floor(r.h * 0.15)}px sans-serif`;
-      ctx.fillText(r.el.nombre, r.x + r.w / 2, r.y + r.h * 0.65);
-      if (r.el.propiedades?.numero_atomico) {
-        ctx.fillText("Z=" + r.el.propiedades.numero_atomico, r.x + r.w / 2, r.y + r.h * 0.85);
-      }
-    }
-
-    function hitTest(px, py) {
-      for (let i = 0; i < rectsEscalados.length; i++) {
-        const r = rectsEscalados[i];
-        if (px >= r.x && px <= r.x + r.w && py >= r.y && py <= r.y + r.h) return i;
-      }
-      return -1;
-    }
-
-    canvas.addEventListener("mousemove", e => {
-      const idx = hitTest(e.clientX, e.clientY);
-      if (idx !== hoveredIdx) {
-        hoveredIdx = idx;
-        dirty = true;
-      }
-
-      if (hoveredIdx >= 0) {
-        const r = rectsEscalados[hoveredIdx];
-        tip.textContent = `${r.el.simbolo} - ${r.el.nombre}`;
-        tip.style.left = (e.clientX + 10) + "px";
-        tip.style.top  = (e.clientY + 10) + "px";
-        tip.style.display = "block";
-      } else {
-        tip.style.display = "none";
-      }
-
-      if (selectedIdx >= 0 && idx !== selectedIdx) selectedIdx = -1;
-    });
-
-    canvas.addEventListener("mouseleave", () => {
-      hoveredIdx = -1;
-      selectedIdx = -1;
-      tip.style.display = "none";
-      dirty = true;
-    });
-
-    canvas.addEventListener("click", e => {
-      const idx = hitTest(e.clientX, e.clientY);
-      selectedIdx = (idx >= 0 ? idx : -1);
-      dirty = true;
-    });
-
-    window.addEventListener("resize", () => {
-      hoveredIdx = -1;
-      selectedIdx = -1;
-      tip.style.display = "none";
+  // Cargar JSON y precargar imágenes
+  fetch('data/elementos.json')
+    .then(r => r.json())
+    .then(json => {
+      data = json;
+      preloadAllImages(data.elementos);
       resizeCanvas();
+      requestAnimationFrame(drawLoop);
+    })
+    .catch(err => {
+      console.error('No se pudo cargar elementos.json', err);
     });
 
-    modeBtn.addEventListener("click", () => {
-      displayMode = (displayMode + 1) % 3;
-      modeBtn.textContent = displayMode === 0 ? "Mostrar imágenes" :
-                            displayMode === 1 ? "Mostrar info" : "Tabla vacía";
+  function preloadAllImages(elements){
+    const seen = new Set();
+    elements.forEach(el => {
+      const url = el.imagen_amigo;
+      if (!url || seen.has(url)) return;
+      seen.add(url);
+      const img = new Image();
+      img.src = url;
+      img.onload = () => { dirty = true; };
+      imageCache.set(url, img);
+    });
+  }
+
+  function resizeCanvas(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    if (!data) return;
+
+    // datos originales (el JSON fue generado con celdas 110x110)
+    const ORIGINAL_CELL_W = (data.elementos[0] && data.elementos[0].ancho) ? data.elementos[0].ancho : 110;
+    // escala objetivo basada en DESIRED_CELL_W:
+    let scaleCandidate = DESIRED_CELL_W / ORIGINAL_CELL_W;
+
+    // tamaño total calculado con VERT aplicado verticalmente
+    let totalW = data.dimensiones.ancho * scaleCandidate;
+    let totalH = data.dimensiones.alto * scaleCandidate * CSS_VERT;
+
+    // si no cabe, recalcula scale para ajustar a viewport (95% para márgenes)
+    const maxW = canvas.width * 0.95;
+    const maxH = canvas.height * 0.95;
+    if (totalW > maxW || totalH > maxH) {
+      const scaleForW = maxW / data.dimensiones.ancho;
+      const scaleForH = maxH / (data.dimensiones.alto * CSS_VERT);
+      scale = Math.min(scaleForW, scaleForH);
+    } else {
+      scale = scaleCandidate;
+    }
+
+    // offsets (centrar)
+    const tablePixelW = data.dimensiones.ancho * scale;
+    const tablePixelH = data.dimensiones.alto * scale * CSS_VERT;
+    offsetX = (canvas.width - tablePixelW) / 2;
+    offsetY = (canvas.height - tablePixelH) / 2;
+
+    // recalcular rects escalados (x,y,w,h)
+    rectsEscalados = data.elementos.map(el => ({
+      x: offsetX + el.posicion_x * scale,
+      y: offsetY + el.posicion_y * scale * CSS_VERT,
+      w: el.ancho * scale,
+      h: el.alto * scale * CSS_VERT,
+      el
+    }));
+
+    // posición y tamaño de previsualizaciones (intentar a la derecha; si no cabe, a la izquierda)
+    const PRE_W = getPreviewW();
+    const PRE_H = PRE_W * CSS_VERT;
+    const availableRight = canvas.width - (offsetX + tablePixelW);
+
+    if (availableRight >= PRE_W + 20) {
+      // colocamos a la derecha, margen 12 px
+      fixedPreview.style.right = '12px';
+      fixedPreview.style.left = '';
+      fixedPreview.style.top = '50px';
+      fixedPreview.style.width = PRE_W + 'px';
+      fixedPreview.style.height = PRE_H + 'px';
+
+      infoPreview.style.right = '12px';
+      infoPreview.style.left = '';
+      infoPreview.style.top = (50 + PRE_H + parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--PREVIEW-GAP')) ) + 'px';
+      infoPreview.style.width = PRE_W + 'px';
+      infoPreview.style.maxHeight = PRE_H + 'px';
+    } else if (offsetX >= PRE_W + 20) {
+      // colocamos a la izquierda de la tabla
+      const leftPos = Math.max(12, Math.floor(offsetX - PRE_W - 12));
+      fixedPreview.style.left = leftPos + 'px';
+      fixedPreview.style.right = '';
+      fixedPreview.style.top = '50px';
+      fixedPreview.style.width = PRE_W + 'px';
+      fixedPreview.style.height = PRE_H + 'px';
+
+      infoPreview.style.left = leftPos + 'px';
+      infoPreview.style.right = '';
+      infoPreview.style.top = (50 + PRE_H + parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--PREVIEW-GAP')) ) + 'px';
+      infoPreview.style.width = PRE_W + 'px';
+      infoPreview.style.maxHeight = PRE_H + 'px';
+    } else {
+      // espacio limitado: situar en esquina superior derecha y reducir un poco si fuera necesario
+      const safeW = Math.min(PRE_W, Math.floor(canvas.width * 0.22));
+      const safeH = Math.floor(safeW * CSS_VERT);
+      fixedPreview.style.right = '8px';
+      fixedPreview.style.left = '';
+      fixedPreview.style.top = '50px';
+      fixedPreview.style.width = safeW + 'px';
+      fixedPreview.style.height = safeH + 'px';
+
+      infoPreview.style.right = '8px';
+      infoPreview.style.left = '';
+      infoPreview.style.top = (50 + safeH + 8) + 'px';
+      infoPreview.style.width = safeW + 'px';
+      infoPreview.style.maxHeight = safeH + 'px';
+    }
+
+    dirty = true;
+  }
+
+  function drawLoop(){
+    if (dirty) { draw(); dirty = false; }
+    requestAnimationFrame(drawLoop);
+  }
+
+  function draw(){
+    if (!data) return;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    rectsEscalados.forEach((r,i) => {
+      // grid
+      ctx.strokeStyle = "#0a5cff";
+      ctx.lineWidth = 1;
+      ctx.strokeRect(Math.round(r.x)+0.5, Math.round(r.y)+0.5, Math.round(r.w), Math.round(r.h));
+
+      if (displayMode === 0) {
+        if (i === hoveredIdx) drawImageFromCache(r);
+        if (i === selectedIdx) drawInfoCard(r);
+      } else if (displayMode === 1) {
+        drawImageFromCache(r);
+        if (i === selectedIdx) drawInfoCard(r);
+      } else { // 2 => toda info
+        drawInfoCard(r);
+        if (i === hoveredIdx) drawImageFromCache(r);
+      }
+    });
+
+    updateFixedPreview();
+    updateInfoPreview();
+  }
+
+  function drawImageFromCache(r){
+    const img = imageCache.get(r.el.imagen_amigo);
+    if (!img) return;
+    if (img.complete) ctx.drawImage(img, r.x, r.y, r.w, r.h);
+    else img.onload = ()=> { dirty = true; };
+  }
+
+  function drawInfoCard(r){
+    ctx.fillStyle = "rgba(255,255,255,0.94)";
+    ctx.fillRect(r.x, r.y, r.w, r.h);
+    ctx.fillStyle = "#000";
+    ctx.textAlign = "center";
+    ctx.font = `${Math.floor(r.h * 0.25)}px sans-serif`;
+    ctx.fillText(r.el.simbolo, r.x + r.w/2, r.y + r.h*0.4);
+    ctx.font = `${Math.floor(r.h * 0.14)}px sans-serif`;
+    ctx.fillText(r.el.nombre, r.x + r.w/2, r.y + r.h*0.68);
+    if (r.el.propiedades?.numero_atomico) {
+      ctx.fillText("Z=" + r.el.propiedades.numero_atomico, r.x + r.w/2, r.y + r.h*0.9);
+    }
+  }
+
+  function hitTest(px,py){
+    for (let i=0;i<rectsEscalados.length;i++){
+      const r=rectsEscalados[i];
+      if (px >= r.x && px <= r.x + r.w && py >= r.y && py <= r.y + r.h) return i;
+    }
+    return -1;
+  }
+
+  /* ---------------------- Eventos de interacción ---------------------- */
+  canvas.addEventListener('mousemove', e=>{
+    const idx = hitTest(e.clientX, e.clientY);
+    if (idx !== hoveredIdx) { hoveredIdx = idx; dirty = true; }
+
+    if (hoveredIdx >= 0) {
+      const r = rectsEscalados[hoveredIdx];
+      tip.textContent = `${r.el.simbolo} — ${r.el.nombre}`;
+      tip.style.left = (e.clientX + 12) + 'px';
+      tip.style.top  = (e.clientY + 12) + 'px';
+      tip.style.display = 'block';
+    } else { tip.style.display = 'none'; }
+
+    // si había un seleccionado y nos movemos fuera de él, borrar selección
+    if (selectedIdx >= 0 && idx !== selectedIdx) {
+      selectedIdx = -1;
       dirty = true;
-    });
-
-    function updateFixedPreview() {
-      if (hoveredIdx >= 0) {
-        const el = rectsEscalados[hoveredIdx].el;
-        const img = imageCache.get(el.imagen_amigo);
-        if (img && img.complete) {
-          fixedPreview.innerHTML = `<img src="${el.imagen_amigo}" alt="${el.nombre}">`;
-        } else {
-          fixedPreview.textContent = "";
-        }
-      } else {
-        fixedPreview.innerHTML = "";
-      }
     }
+  });
 
-    function updateInfoPreview() {
-      let el = null;
-      if (selectedIdx >= 0) el = rectsEscalados[selectedIdx].el;
-      else if (hoveredIdx >= 0) el = rectsEscalados[hoveredIdx].el;
+  canvas.addEventListener('mouseleave', ()=>{
+    hoveredIdx = -1;
+    selectedIdx = -1;
+    tip.style.display = 'none';
+    dirty = true;
+  });
 
-      if (el) {
-        infoPreview.innerHTML = `
-          <h3>${el.nombre} (${el.simbolo})</h3>
-          <p><strong>Número atómico:</strong> ${el.propiedades.numero_atomico || 'N/A'}</p>
-          <p><strong>Masa atómica:</strong> ${el.propiedades.masa_atomica || 'N/A'}</p>
-          <p><strong>Configuración electrónica:</strong> ${el.propiedades.configuracion_electronica || 'N/A'}</p>
-          <p><strong>Grupo:</strong> ${el.propiedades.grupo || 'N/A'}</p>
-          <p><strong>Periodo:</strong> ${el.propiedades.periodo || 'N/A'}</p>
-        `;
-      } else {
-        infoPreview.innerHTML = '';
-      }
+  canvas.addEventListener('click', e=>{
+    const idx = hitTest(e.clientX, e.clientY);
+    selectedIdx = (idx >= 0 ? idx : -1);
+    dirty = true;
+  });
+
+  canvas.addEventListener('dblclick', e=>{
+    const idx = hitTest(e.clientX, e.clientY);
+    if (idx >= 0) {
+      const r = rectsEscalados[idx];
+      showWorldEntry(r);
     }
+  });
+
+  window.addEventListener('resize', ()=>{
+    hoveredIdx = -1; selectedIdx = -1; tip.style.display='none';
+    resizeCanvas();
+  });
+
+  modeBtn.addEventListener('click', ()=>{
+    displayMode = (displayMode + 1) % 3;
+    modeBtn.textContent = displayMode === 0 ? "Mostrar imágenes" : displayMode === 1 ? "Mostrar info" : "Tabla vacía";
+    dirty = true;
+  });
+
+  /* -------------------- Actualización de las previsualizaciones -------------------- */
+  function updateFixedPreview(){
+    if (hoveredIdx >= 0){
+      const el = rectsEscalados[hoveredIdx].el;
+      const img = imageCache.get(el.imagen_amigo);
+      if (img && img.complete) fixedPreview.innerHTML = `<img src="${el.imagen_amigo}" alt="${el.nombre}">`;
+      else fixedPreview.innerHTML = '';
+    } else fixedPreview.innerHTML = '';
+  }
+
+  function updateInfoPreview(){
+    // preferir selected, si no hovered
+    let el = null;
+    if (selectedIdx >= 0) el = rectsEscalados[selectedIdx].el;
+    else if (hoveredIdx >= 0) el = rectsEscalados[hoveredIdx].el;
+
+    if (!el) { infoPreview.innerHTML = ''; return; }
+
+    // contenido base
+    infoPreview.style.fontSize = ''; // restablece
+    infoPreview.innerHTML = `
+      <div style="font-weight:700; margin-bottom:6px; font-size:1.02em;">${el.nombre} <small style="opacity:0.85">(${el.simbolo})</small></div>
+      <div><strong>Número atómico:</strong> ${el.propiedades.numero_atomico || 'N/A'}</div>
+      <div><strong>Masa atómica:</strong> ${el.propiedades.masa_atomica || 'N/A'}</div>
+      <div><strong>Configuración:</strong> ${el.propiedades.configuracion_electronica || 'N/A'}</div>
+      <div><strong>Grupo / Periodo:</strong> ${el.propiedades.grupo || 'N/A'} / ${el.propiedades.periodo || 'N/A'}</div>
+    `;
+
+    // ajustar tamaño de fuente si el contenido se desborda (evita scrollbar inútil)
+    const maxH = parseFloat(getComputedStyle(infoPreview).maxHeight);
+    let computed = window.getComputedStyle(infoPreview);
+    let fs = parseFloat(computed.fontSize) || 13;
+    while (infoPreview.scrollHeight > maxH && fs > 8) {
+      fs -= 0.8;
+      infoPreview.style.fontSize = fs + 'px';
+    }
+  }
+
+  /* -------------------- Doble clic: entrada mundo virtual -------------------- */
+  function showWorldEntry(r){
+    const el = r.el;
+    const box = document.createElement('div');
+    box.className = 'world-entry';
+    box.textContent = `Entrada al mundo virtual de ${el.nombre}`;
+    document.body.appendChild(box);
+
+    // calcular posición: justo debajo del recuadro (convertir r.x/r.y a valores de cliente)
+    // r.x/r.y son ya en coordenadas del canvas en cliente, así que los usamos directamente.
+    const boxW = 260;
+    const left = Math.max(8, Math.min(window.innerWidth - boxW - 8, Math.round(r.x + r.w/2 - boxW/2)));
+    const top  = Math.round(r.y + r.h + 8);
+    box.style.left = left + 'px';
+    box.style.top  = top  + 'px';
+    box.style.width = boxW + 'px';
+    box.style.textAlign = 'center';
+
+    // desaparece tras 2s
+    setTimeout(()=> {
+      box.remove();
+    }, 2000);
+  }
+
   </script>
 </body>
 </html>
