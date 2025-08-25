@@ -214,13 +214,7 @@
       scale = Math.min(scaleX, scaleY);
 
       offsetX = (canvas.width - w * scale) / 2;
-<<<<<<< HEAD
       offsetY = (canvas.height - h * scale * CSS_VERT) / 2;
-=======
-      const extraTop = 40; // píxeles a bajar
-offsetY = (canvas.height - h * scale * CSS_VERT) / 2 + extraTop;
-
->>>>>>> parent of 874ab99 (Cambios Posición Pantalla)
 
       rectsEscalados = data.elementos.map(el => ({
         x: offsetX + el.posicion_x * scale,

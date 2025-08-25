@@ -59,6 +59,7 @@ html, body {
   font-size: 14px;
 }
 
+<<<<<<< HEAD
 /* Previsualización fija */
 #fixedPreview {
   position: fixed;
@@ -71,6 +72,32 @@ html, body {
   display: none; /* se muestra dinámicamente */
   pointer-events: none;
   box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+=======
+/* Contenedor de interacción para la imagen/texto */
+#interaccion-elemento {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 0%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Estilos para el texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    box-sizing: border-box;
+>>>>>>> parent of 874ab99 (Cambios Posición Pantalla)
 }
 
 #fixedPreview img{
