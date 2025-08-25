@@ -1,0 +1,157 @@
+:root{
+  --PREVIEW-W: 200px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  color: #fff;
+  background: #0e0e0e;
+}
+
+/* Banner de error */
+#errorBanner{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: #b00020;
+  color: #fff;
+  padding: 10px 14px;
+  font-weight: 600;
+  z-index: 2000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+.hidden{ display:none; }
+
+#canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Tooltip */
+#tip {
+  position: fixed;
+  display: none;
+  pointer-events: none;
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  z-index: 1300;
+}
+
+/* Botón de modo */
+#modeBtn {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 1310;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(40,40,40,0.95);
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+<<<<<<< HEAD
+/* Previsualización fija */
+#fixedPreview {
+  position: fixed;
+  z-index: 1290;
+  width: var(--PREVIEW-W);
+  height: var(--PREVIEW-W); /* cuadrada por defecto */
+  background: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  display: none; /* se muestra dinámicamente */
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+=======
+/* Contenedor de interacción para la imagen/texto */
+#interaccion-elemento {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 0%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Estilos para el texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    box-sizing: border-box;
+>>>>>>> parent of 874ab99 (Cambios Posición Pantalla)
+}
+
+#fixedPreview img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* Franja con el nombre en la parte inferior de la previsualización */
+.preview-caption{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  line-height: 1.2;
+  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.78) 100%);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+  pointer-events: none;
+}
+
+/* Panel de info textual */
+#infoPreview {
+  position: fixed;
+  z-index: 1290;
+  width: var(--PREVIEW-W);
+  max-height: var(--PREVIEW-W);
+  background: rgba(0,0,0,0.66);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 10px;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 1.32;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+/* Tabla accesible escondida visualmente */
+#accessibleTable {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) { :root { --PREVIEW-W: 170px; } }
+@media (max-width: 768px)  { :root { --PREVIEW-W: 140px; } }
+@media (max-width: 480px)  { :root { --PREVIEW-W: 110px; } }
