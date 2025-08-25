@@ -1,17 +1,17 @@
-// mapa.js - Tabla periódica interactiva Fase II
+// archivo: mapa.js - Tabla periódica interactiva Fase II
 
 const canvas = document.getElementById('tablaCanvas');
 const ctx = canvas.getContext('2d');
 const recuadroInfo = document.getElementById('recuadro-info');
 
-// Configuración de casillas (ejemplo)
+// Configuración de casillas
 const casillas = [
   { idElemento: 1, x: 10, y: 10, ancho: 110, alto: 110 },
   { idElemento: 2, x: 130, y: 10, ancho: 110, alto: 110 },
   { idElemento: 3, x: 250, y: 10, ancho: 110, alto: 110 }
 ];
 
-// Datos de ejemplo de elementos
+// Datos de elementos de ejemplo
 const elementos = {
   1: { img: 'assets/amigos/Amigo001.png', simbolo: 'H', nombre: 'Hidrógeno' },
   2: { img: 'assets/amigos/Amigo002.png', simbolo: 'He', nombre: 'Helio' },
@@ -21,7 +21,7 @@ const elementos = {
 // Estado actual
 let hoverElemento = null;
 
-// Dibujar hover pequeño
+// Función para dibujar hover pequeño
 function dibujarHover() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   if (hoverElemento) {
