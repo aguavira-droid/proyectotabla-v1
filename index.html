@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tabla Periódica Interactiva — Escalable</title>
+  <style>
+    :root {
+      --VERT: 1.2;
+      --PREVIEW-W: 200px;
+      --PREVIEW-GAP: 10px;
+      --SCALE-MULT: 1.35;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, Arial, sans-serif;
+      background: #111 url('img/Aliens1.png') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+    #canvas { display: block; width: 100vw; height: 100vh; }
+    #tip {
+      position: fixed;
+      display: none;
+      pointer-events: none;
+      background: rgba(0,0,0,0.8);
+      color: #fff;
+      padding: 6px 8px;
+      border-radius: 6px;
+      font-size: 13px;
+      z-index: 1300;
+    }
+    #modeBtn {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      z-index: 1310;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      background: rgba(40,40,40,0.95);
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    #fixedPreview, #infoPreview {
+      position: fixed;
+      z-index: 1290;
+      width: var(--PREVIEW-W);
+      background: rgba(0,0,0,0.66);
+      border: 2px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    #fixedPreview {
+      height: calc(var(--PREVIEW-W) * var(--VERT));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #fixedPreview img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    #infoPreview {
+      max-height: calc(var(--PREVIEW-W) * var(--VERT));
+      padding: 10px;
+      box-sizing: border-box;
+      font-size: 13px;
+      line-height: 1.32;
+      color: #fff;
+    }
+    .world-entry {
+      position: fixed;
+      z-index: 1320;
+      background: linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.75));
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.45s ease, transform 0.2s ease;
+    }
+    #accessibleTable {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    @media (max-width: 1024px) { :root { --PREVIEW-W: 170px; } }
+    @media (max-width: 768px)  { :root { --PREVIEW-W: 140px; } }
+    @media (max-width: 480px)  { :root { --PREVIEW-W: 110px; } }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <div id="tip" role="status" aria-live="polite"></div>
+  <button id="modeBtn" aria-label="Cambiar modo de visualización">Mostrar imágenes</button>
+  <div id="fixedPreview" aria-hidden="true"></div>
+  <div id="infoPreview" aria-hidden="true"></div>
+  <table id="accessibleTable" aria-label="Tabla periódica accesible"></table>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const tip = document.getElementById('tip');
+    const modeBtn = document.getElementById('modeBtn');
+    const fixedPreview = document.getElementById('fixedPreview');
+    const infoPreview = document.getElementById('infoPreview');
+    const accessibleTable = document.getElementById('accessibleTable');
+
+    let data=null, rectsEscalados=[], scale=1, offsetX=0, offsetY=0;
+    let displayMode=0, hoveredIdx=-1, selectedIdx=-1;
+    const imageCache = new Map();
+    let dirty=true;
+    const CSS_VERT = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--VERT'))||1.2;
+
+    fetch('data/elementos.json')
+      .then(r=>r.json())
+      .then(json=>{data=json; preloadAllImages(data.elementos); resizeCanvas(); requestAnimationFrame(drawLoop); buildAccessibleTable(data.elementos);})
+      .catch(err=>{console.error('Error cargando elementos.json:', err); infoPreview.innerHTML='<strong>Error</strong> al cargar los datos.';});
+
+    function preloadAllImages(elements){
+      const seen = new Set();
+      elements.forEach(el=>{
+        const url = el.imagen_amigo;
+        if(!url || seen.has(url)) return;
+        seen.add(url);
+        const img = new Image();
+        img.src = url;
+        img.onload = ()=>{ dirty=true; };
+        img.onerror = ()=>{ console.warn('Imagen no cargada:', url); };
+        imageCache.set(url,img);
+      });
+    }
+
+    function buildAccessibleTable(elements){
+      if(!elements) return;
+      let html='<caption>Tabla periódica (accesible)</caption><thead><tr><th>Símbolo</th><th>Nombre</th><th>Z</th></tr></thead><tbody>';
+      elements.forEach(el=>{
+        const z = el.propiedades?.numero_atomico??'';
+        html+=`<tr><td>${el.simbolo}</td><td>${el.nombre}</td><td>${z}</td></tr>`;
+      });
+      html+='</tbody>';
+      accessibleTable.innerHTML=html;
+    }
+
+    function resizeCanvas(){
+      canvas.width=window.innerWidth;
+      canvas.height=window.innerHeight;
+      if(!data) return;
+      const w=data.dimensiones.ancho, h=data.dimensiones.alto;
+      const scaleX = canvas.width/w;
+      const scaleY = canvas.height/(h*CSS_VERT);
+      const scaleMult = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--SCALE-MULT'))||1;
+      scale = Math.min(scaleX, scaleY)*scaleMult;
+      offsetX = (canvas.width - w*scale)/2;
+      offsetY = 0;
+      rectsEscalados = data.elementos.map(el=>({
+        x: offsetX+el.posicion_x*scale,
+        y: offsetY+el.posicion_y*scale*CSS_VERT,
+        w: el.ancho*scale,
+        h: el.alto*scale*CSS_VERT,
+        el
+      }));
+      positionPreviews();
+      dirty=true;
+    }
+
+    function positionPreviews(){
+      const PRE_W=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--PREVIEW-W'))||200;
+      const PRE_H=PRE_W*CSS_VERT;
+      const tableRightEdge = offsetX+data.dimensiones.ancho*scale;
+      const availableRight = window.innerWidth - tableRightEdge;
+      if(availableRight>=PRE_W+24){
+        fixedPreview.style.right='12px'; fixedPreview.style.left=''; fixedPreview.style.top='50px';
+        fixedPreview.style.width=PRE_W+'px'; fixedPreview.style.height=PRE_H+'px';
+        infoPreview.style.right='12px'; infoPreview.style.left=''; infoPreview.style.top=(50+PRE_H+12)+'px';
+        infoPreview.style.width=PRE_W+'px'; infoPreview.style.maxHeight=PRE_H+'px';
+      } else if(offsetX>=PRE_W+24){
+        fixedPreview.style.left=Math.max(12,Math.floor(offsetX-PRE_W-12))+'px'; fixedPreview.style.right=''; fixedPreview.style.top='50px';
+        fixedPreview.style.width=PRE_W+'px'; fixedPreview.style.height=PRE_H+'px';
+        infoPreview.style.left=Math.max(12,Math.floor(offsetX-PRE_W-12))+'px'; infoPreview.style.right=''; infoPreview.style.top=(50+PRE_H+12)+'px';
+        infoPreview.style.width=PRE_W+'px'; infoPreview.style.maxHeight=PRE_H+'px';
+      } else {
+        const safeW=Math.min(PRE_W, Math.floor(window.innerWidth*0.22));
+        const safeH=Math.floor(safeW*CSS_VERT);
+        fixedPreview.style.right='8px'; fixedPreview.style.left=''; fixedPreview.style.top='50px';
+        fixedPreview.style.width=safeW+'px'; fixedPreview.style.height=safeH+'px';
+        infoPreview.style.right='8px'; infoPreview.style.left=''; infoPreview.style.top=(50+safeH+8)+'px';
+        infoPreview.style.width=safeW+'px'; infoPreview.style.maxHeight=safeH+'px';
+      }
+    }
+
+    function drawLoop(){ if(dirty){draw(); dirty=false;} requestAnimationFrame(drawLoop); }
+    function draw(){
+      if(!data) return;
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      rectsEscalados.forEach((r,i)=>{
+        ctx.strokeStyle="#0a5cff"; ctx.lineWidth=1;
+        ctx.strokeRect(Math.round(r.x)+0.5, Math.round(r.y)+0.5, Math.round(r.w), Math.round(r.h));
+        if(displayMode===0){ if(i===hoveredIdx) drawImageFromCache(r); if(i===selectedIdx) drawInfoCard(r); }
+        else if(displayMode===1){ drawImageFromCache(r); if(i===selectedIdx) drawInfoCard(r); }
+        else if(displayMode===2){ drawInfoCard(r); if(i===hoveredIdx) drawImageFromCache(r); }
+      });
+      updateFixedPreview(); updateInfoPreview();
+    }
+    function drawImageFromCache(r){ const img=imageCache.get(r.el.imagen_amigo); if(!img) return; if(img.complete) ctx.drawImage(img,r.x,r.y,r.w,r.h); else img.onload=()=>{dirty=true;}; }
+    function drawInfoCard(r){
+      ctx.fillStyle="rgba(255,255,255,0.96)"; ctx.fillRect(r.x,r.y,r.w,r.h);
+      ctx.fillStyle="#000"; ctx.textAlign="center";
+      ctx.font=`${Math.floor(r.h*0.25)}px sans-serif`; ctx.fillText(r.el.simbolo,r.x+r.w/2,r.y+r.h*0.4);
+      ctx.font=`${Math.floor(r.h*0.14)}px sans-serif`; ctx.fillText(r.el.nombre,r.x+r.w/2,r.y+r.h*0.68);
+      if(r.el.propiedades?.numero_atomico) ctx.fillText("Z="+r.el.propiedades.numero_atomico,r.x+r.w/2,r.y+r.h*0.9);
+    }
+    function hitTest(px,py){ for(let i=0;i<rectsEscalados.length;i++){ const r=rectsEscalados[i]; if(px>=r.x && px<=r.x+r.w && py>=r.y && py<=r.y+r.h) return i; } return -1; }
+
+    canvas.addEventListener('mousemove', e=>{
+      const idx=hitTest(e.clientX,e.clientY);
+      if(idx!==hoveredIdx){ hoveredIdx=idx; dirty=true; }
+      if(hoveredIdx>=0){ const r=rectsEscalados[hoveredIdx]; tip.textContent=`${r.el.simbolo} — ${r.el.nombre}`;
+      tip.style.left=(e.clientX+12)+'px'; tip.style.top=(e.clientY+12)+'px'; tip.style.display='block'; } else tip.style.display='none';
+      if(selectedIdx>=0 && idx!==selectedIdx){ selectedIdx=-1; dirty=true; }
+    });
+    canvas.addEventListener('mouseleave', ()=>{ hoveredIdx=-1; selectedIdx=-1; tip.style.display='none'; dirty=true; });
+    canvas.addEventListener('click', e=>{ const idx=hitTest(e.clientX,e.clientY); selectedIdx=(idx>=0?idx:-1); dirty=true; });
+    canvas.addEventListener('dblclick', e=>{ const idx=hitTest(e.clientX,e.clientY); if(idx>=0) showWorldEntry(rectsEscalados[idx]); });
+    window.addEventListener('resize', ()=>{ hoveredIdx=-1; selectedIdx=-1; tip.style.display='none'; resizeCanvas(); });
+    modeBtn.addEventListener('click', ()=>{ displayMode=(displayMode+1)%3; modeBtn.textContent=displayMode===0?"Mostrar imágenes":displayMode===1?"Mostrar info":"Tabla vacía"; modeBtn.setAttribute('aria-label',`Modo ${modeBtn.textContent}`); dirty=true; });
+
+    function updateFixedPreview(){ if(hoveredIdx>=0){ const el=rectsEscalados[hoveredIdx].el; const img=imageCache.get(el.imagen_amigo); if(img && img.complete) fixedPreview.innerHTML=`<img src="${el.imagen_amigo}" alt="${el.nombre}">`; else fixedPreview.innerHTML=''; }else fixedPreview.innerHTML=''; }
+    function updateInfoPreview(){
+      let el=null; if(selectedIdx>=0) el=rectsEscalados[selectedIdx].el; else if(hoveredIdx>=0) el=rectsEscalados[hoveredIdx].el;
+      if(!el){ infoPreview.innerHTML=''; return; }
+      infoPreview.style.fontSize='';
+      infoPreview.innerHTML=`
+        <div style="font-weight:700; margin-bottom:6px; font-size:1.02em;">${el.nombre} <small style="opacity:0.86">(${el.simbolo})</small></div>
+        <div><strong>Número atómico:</strong> ${el.propiedades?.numero_atomico ?? 'N/A'}</div>
+        <div><strong>Masa atómica:</strong> ${el.propiedades?.masa_atomica ?? 'N/A'}</div>
+        <div><strong>Configuración:</strong> ${el.propiedades?.configuracion_electronica ?? 'N/A'}</div>
+        <div><strong>Grupo / Periodo:</strong> ${el.propiedades?.grupo ?? 'N/A'} / ${el.propiedades?.periodo ?? 'N/A'}</div>
+      `;
+      const maxH=parseFloat(getComputedStyle(infoPreview).maxHeight);
+      let fs=parseFloat(window.getComputedStyle(infoPreview).fontSize)||13;
+      for(let i=0;i<10 && infoPreview.scrollHeight>maxH && fs>8;i++){ fs=Math.max(8,fs-0.8); infoPreview.style.fontSize=fs+'px'; }
+    }
+
+    function showWorldEntry(r){
+      const el=r.el;
+      const box=document.createElement('div'); box.className='world-entry';
+      box.textContent=`Entrada al mundo virtual de ${el.nombre}`; document.body.appendChild(box);
+      const boxW=260; const left=Math.max(8,Math.min(window.innerWidth-boxW-8,Math.round(r.x+r.w/2-boxW/2)));
+      const top=Math.round(r.y+r.h+8);
+      box.style.left=left+'px'; box.style.top=top+'px'; box.style.width=boxW+'px'; box.style.textAlign='center'; box.style.opacity='1';
+      setTimeout(()=>{ box.style.opacity='0'; box.style.transform='translateY(-6px)'; },1600);
+      setTimeout(()=>box.remove(),2050);
+    }
+
+    window.addEventListener('load', ()=>{ resizeCanvas(); requestAnimationFrame(drawLoop); });
+  </script>
+</body>
+</html>

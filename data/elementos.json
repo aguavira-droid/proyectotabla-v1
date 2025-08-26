@@ -1,0 +1,1189 @@
+{
+  "titulo": "Tabla Periódica Interactiva",
+  "dimensiones": {
+    "ancho": 1916,
+    "alto": 1800
+  },
+  "elementos": [
+    {
+      "simbolo": "H",
+      "nombre": "Hidrógeno",
+      "posicion_x": -100,
+      "posicion_y": 149,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder1.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "He",
+      "nombre": "Helio",
+      "posicion_x": 1770,
+      "posicion_y": 149,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder2.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Li",
+      "nombre": "Litio",
+      "posicion_x": -100,
+      "posicion_y": 259,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder3.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Be",
+      "nombre": "Berilio",
+      "posicion_x": 10,
+      "posicion_y": 259,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder4.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "B",
+      "nombre": "Boro",
+      "posicion_x": 1220,
+      "posicion_y": 259,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder5.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "C",
+      "nombre": "Carbono",
+      "posicion_x": 1330,
+      "posicion_y": 259,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder6.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "N",
+      "nombre": "Nitrógeno",
+      "posicion_x": 1440,
+      "posicion_y": 259,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder7.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "O",
+      "nombre": "Oxígeno",
+      "posicion_x": 1550,
+      "posicion_y": 259,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder8.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "F",
+      "nombre": "Flúor",
+      "posicion_x": 1660,
+      "posicion_y": 259,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder9.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ne",
+      "nombre": "Neón",
+      "posicion_x": 1770,
+      "posicion_y": 259,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder10.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Na",
+      "nombre": "Sodio",
+      "posicion_x": -100,
+      "posicion_y": 369,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder11.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Mg",
+      "nombre": "Magnesio",
+      "posicion_x": 10,
+      "posicion_y": 369,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder12.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Al",
+      "nombre": "Aluminio",
+      "posicion_x": 1220,
+      "posicion_y": 369,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder13.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Si",
+      "nombre": "Silicio",
+      "posicion_x": 1330,
+      "posicion_y": 369,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder14.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "P",
+      "nombre": "Fósforo",
+      "posicion_x": 1440,
+      "posicion_y": 369,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder15.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "S",
+      "nombre": "Azufre",
+      "posicion_x": 1550,
+      "posicion_y": 369,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder16.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Cl",
+      "nombre": "Cloro",
+      "posicion_x": 1660,
+      "posicion_y": 369,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder17.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ar",
+      "nombre": "Argón",
+      "posicion_x": 1770,
+      "posicion_y": 369,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder18.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "K",
+      "nombre": "Potasio",
+      "posicion_x": -100,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder19.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ca",
+      "nombre": "Calcio",
+      "posicion_x": 10,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder20.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Sc",
+      "nombre": "Escandio",
+      "posicion_x": 120,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder21.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ti",
+      "nombre": "Titanio",
+      "posicion_x": 230,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder22.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "V",
+      "nombre": "Vanadio",
+      "posicion_x": 340,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder23.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Cr",
+      "nombre": "Cromo",
+      "posicion_x": 450,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder24.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Mn",
+      "nombre": "Manganeso",
+      "posicion_x": 560,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder25.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Fe",
+      "nombre": "Hierro",
+      "posicion_x": 670,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder26.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Co",
+      "nombre": "Cobalto",
+      "posicion_x": 780,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder27.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ni",
+      "nombre": "Níquel",
+      "posicion_x": 890,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder28.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Cu",
+      "nombre": "Cobre",
+      "posicion_x": 1000,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder29.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Zn",
+      "nombre": "Zinc",
+      "posicion_x": 1110,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder30.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ga",
+      "nombre": "Galio",
+      "posicion_x": 1220,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder31.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ge",
+      "nombre": "Germanio",
+      "posicion_x": 1330,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder32.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "As",
+      "nombre": "Arsénico",
+      "posicion_x": 1440,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder33.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Se",
+      "nombre": "Selenio",
+      "posicion_x": 1550,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder34.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Br",
+      "nombre": "Bromo",
+      "posicion_x": 1660,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder35.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Kr",
+      "nombre": "Kriptón",
+      "posicion_x": 1770,
+      "posicion_y": 479,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder36.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Rb",
+      "nombre": "Rubidio",
+      "posicion_x": -100,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder37.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Sr",
+      "nombre": "Estroncio",
+      "posicion_x": 10,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder38.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Y",
+      "nombre": "Itrio",
+      "posicion_x": 120,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder39.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Zr",
+      "nombre": "Circonio",
+      "posicion_x": 230,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder40.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Nb",
+      "nombre": "Niobio",
+      "posicion_x": 340,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder41.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Mo",
+      "nombre": "Molibdeno",
+      "posicion_x": 450,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder42.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Tc",
+      "nombre": "Tecnecio",
+      "posicion_x": 560,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder43.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ru",
+      "nombre": "Rutenio",
+      "posicion_x": 670,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder44.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Rh",
+      "nombre": "Rodio",
+      "posicion_x": 780,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder45.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Pd",
+      "nombre": "Paladio",
+      "posicion_x": 890,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder46.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ag",
+      "nombre": "Plata",
+      "posicion_x": 1000,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder47.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Cd",
+      "nombre": "Cadmio",
+      "posicion_x": 1110,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder48.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "In",
+      "nombre": "Indio",
+      "posicion_x": 1220,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder49.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Sn",
+      "nombre": "Estaño",
+      "posicion_x": 1330,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder50.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Sb",
+      "nombre": "Antimonio",
+      "posicion_x": 1440,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder51.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Te",
+      "nombre": "Telurio",
+      "posicion_x": 1550,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder52.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "I",
+      "nombre": "Yodo",
+      "posicion_x": 1660,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder53.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Xe",
+      "nombre": "Xenón",
+      "posicion_x": 1770,
+      "posicion_y": 589,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder54.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Cs",
+      "nombre": "Cesio",
+      "posicion_x": -100,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder55.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ba",
+      "nombre": "Bario",
+      "posicion_x": 10,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder56.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Lu",
+      "nombre": "Lutecio",
+      "posicion_x": 120,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder71.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Hf",
+      "nombre": "Hafnio",
+      "posicion_x": 230,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder72.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ta",
+      "nombre": "Tantalio",
+      "posicion_x": 340,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder73.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "W",
+      "nombre": "Wolframio",
+      "posicion_x": 450,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder74.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Re",
+      "nombre": "Renio",
+      "posicion_x": 560,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder75.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Os",
+      "nombre": "Osmio",
+      "posicion_x": 670,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder76.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ir",
+      "nombre": "Iridio",
+      "posicion_x": 780,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder77.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Pt",
+      "nombre": "Platino",
+      "posicion_x": 890,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder78.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Au",
+      "nombre": "Oro",
+      "posicion_x": 1000,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder79.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Hg",
+      "nombre": "Mercurio",
+      "posicion_x": 1110,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder80.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Tl",
+      "nombre": "Talio",
+      "posicion_x": 1220,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder81.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Pb",
+      "nombre": "Plomo",
+      "posicion_x": 1330,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder82.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Bi",
+      "nombre": "Bismuto",
+      "posicion_x": 1440,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder83.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Po",
+      "nombre": "Polonio",
+      "posicion_x": 1550,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder84.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "At",
+      "nombre": "Astato",
+      "posicion_x": 1660,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder85.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Rn",
+      "nombre": "Radón",
+      "posicion_x": 1770,
+      "posicion_y": 699,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder86.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Fr",
+      "nombre": "Francio",
+      "posicion_x": -100,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder87.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ra",
+      "nombre": "Radio",
+      "posicion_x": 10,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder88.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Lr",
+      "nombre": "Lawrencio",
+      "posicion_x": 120,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder103.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Rf",
+      "nombre": "Rutherfordio",
+      "posicion_x": 230,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder104.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Db",
+      "nombre": "Dubnio",
+      "posicion_x": 340,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder105.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Sg",
+      "nombre": "Seaborgio",
+      "posicion_x": 450,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder106.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Bh",
+      "nombre": "Bohrio",
+      "posicion_x": 560,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder107.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Hs",
+      "nombre": "Hassio",
+      "posicion_x": 670,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder108.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Mt",
+      "nombre": "Meitnerio",
+      "posicion_x": 780,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder109.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ds",
+      "nombre": "Darmstadtio",
+      "posicion_x": 890,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder110.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Rg",
+      "nombre": "Roentgenio",
+      "posicion_x": 1000,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder111.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Cn",
+      "nombre": "Copernicio",
+      "posicion_x": 1110,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder112.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Nh",
+      "nombre": "Nihonio",
+      "posicion_x": 1220,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder113.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Fl",
+      "nombre": "Flerovio",
+      "posicion_x": 1330,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder114.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Mc",
+      "nombre": "Moscovio",
+      "posicion_x": 1440,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder115.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Lv",
+      "nombre": "Livermorio",
+      "posicion_x": 1550,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder116.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ts",
+      "nombre": "Tenesino",
+      "posicion_x": 1660,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder117.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Og",
+      "nombre": "Oganesón",
+      "posicion_x": 1770,
+      "posicion_y": 809,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder118.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "La",
+      "nombre": "Lantano",
+      "posicion_x": 340,
+      "posicion_y": 1029,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder57.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ce",
+      "nombre": "Cerio",
+      "posicion_x": 450,
+      "posicion_y": 1029,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder58.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Pr",
+      "nombre": "Praseodimio",
+      "posicion_x": 560,
+      "posicion_y": 1029,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder59.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Nd",
+      "nombre": "Neodimio",
+      "posicion_x": 670,
+      "posicion_y": 1029,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder60.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Pm",
+      "nombre": "Prometio",
+      "posicion_x": 780,
+      "posicion_y": 1029,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder61.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Sm",
+      "nombre": "Samario",
+      "posicion_x": 890,
+      "posicion_y": 1029,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder62.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Eu",
+      "nombre": "Europio",
+      "posicion_x": 1000,
+      "posicion_y": 1029,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder63.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Gd",
+      "nombre": "Gadolinio",
+      "posicion_x": 1110,
+      "posicion_y": 1029,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder64.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Tb",
+      "nombre": "Terbio",
+      "posicion_x": 1220,
+      "posicion_y": 1029,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder65.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Dy",
+      "nombre": "Disprosio",
+      "posicion_x": 1330,
+      "posicion_y": 1029,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder66.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ho",
+      "nombre": "Holmio",
+      "posicion_x": 1440,
+      "posicion_y": 1029,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder67.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Er",
+      "nombre": "Erbio",
+      "posicion_x": 1550,
+      "posicion_y": 1029,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder68.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Tm",
+      "nombre": "Tulio",
+      "posicion_x": 1660,
+      "posicion_y": 1029,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder69.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Yb",
+      "nombre": "Iterbio",
+      "posicion_x": 1770,
+      "posicion_y": 1029,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder70.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Ac",
+      "nombre": "Actinio",
+      "posicion_x": 340,
+      "posicion_y": 1139,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder89.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Th",
+      "nombre": "Torio",
+      "posicion_x": 450,
+      "posicion_y": 1139,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder90.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Pa",
+      "nombre": "Protactinio",
+      "posicion_x": 560,
+      "posicion_y": 1139,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder91.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "U",
+      "nombre": "Uranio",
+      "posicion_x": 670,
+      "posicion_y": 1139,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder92.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Np",
+      "nombre": "Neptunio",
+      "posicion_x": 780,
+      "posicion_y": 1139,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder93.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Pu",
+      "nombre": "Plutonio",
+      "posicion_x": 890,
+      "posicion_y": 1139,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder94.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Am",
+      "nombre": "Americio",
+      "posicion_x": 1000,
+      "posicion_y": 1139,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder95.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Cm",
+      "nombre": "Curio",
+      "posicion_x": 1110,
+      "posicion_y": 1139,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder96.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Bk",
+      "nombre": "Berkelio",
+      "posicion_x": 1220,
+      "posicion_y": 1139,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder97.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Cf",
+      "nombre": "Californio",
+      "posicion_x": 1330,
+      "posicion_y": 1139,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder98.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Es",
+      "nombre": "Einsteinio",
+      "posicion_x": 1440,
+      "posicion_y": 1139,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder99.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Fm",
+      "nombre": "Fermio",
+      "posicion_x": 1550,
+      "posicion_y": 1139,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder100.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "Md",
+      "nombre": "Mendelevio",
+      "posicion_x": 1660,
+      "posicion_y": 1139,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder101.png",
+      "propiedades": {}
+    },
+    {
+      "simbolo": "No",
+      "nombre": "Nobelio",
+      "posicion_x": 1770,
+      "posicion_y": 1139,
+      "ancho": 110,
+      "alto": 110,
+      "imagen_amigo": "assets/amigos/placeholder102.png",
+      "propiedades": {}
+    }
+  ]
+}

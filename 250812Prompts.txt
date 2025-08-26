@@ -1,0 +1,39 @@
+### Contexto del Proyecto "Tabla Periódica Interactiva"
+**Repositorio:** https://github.com/aguavira-droid/proyectotabla-v1  
+**Objetivo corto plazo (1 mes):**  
+- Imagen de fondo (tabla periódica muda PNG) con áreas interactivas mapeadas.  
+- Al pasar el ratón: mostrar imagen personalizada (ej: foto de amigo) en la posición del elemento.  
+- Al hacer clic: mostrar símbolo químico + propiedades básicas.  
+
+**Objetivo largo plazo:**  
+- Evolucionar hacia mundos virtuales 3D/juegos basados en la tabla periódica.  
+
+### Configuración Técnica Actual
+1. **Hardware:**  
+   - Principal: Asus AIO (Windows, 16GB RAM) + pantalla secundaria HP  
+   - Secundarios: HP Spectre folio (8GB), Samsung S24 Ultra, Tablet S7+  
+
+2. **Software:**  
+   - Editores: VS Code  
+   - Control de versión: GitHub Desktop  
+   - Despliegue: GitHub Pages (sitio ya activo)  
+
+3. **Preferencias clave:**  
+   - Idioma: Español (código y documentación)  
+   - Enfoque: Punto intermedio (código de IA modificado)  
+   - Disponibilidad: 20 h/semana  
+
+### Implementación Acordada
+```javascript
+// SOLUCIÓN TÉCNICA PARA HOVER CON IMÁGENES:
+// 1. Sistema de coordenadas dinámico con JavaScript puro (no <map> estático)
+// 2. Canvas superpuesto sobre la imagen PNG para detección precisa
+// 3. Lógica en:
+//    - index.html: Estructura base + canvas
+//    - js/mapa.js: Mapeo de áreas interactivas
+//    - css/estilos.css: Efectos hover (opacidad/zoom)
+
+// PRÓXIMOS PASOS INMEDIATOS:
+// a) Crear JSON con datos de prueba (2-3 elementos)
+// b) Implementar detección de hover en canvas
+// c) Cargar imágenes dinámicamente al pasar el ratón
