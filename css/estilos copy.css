@@ -1,0 +1,81 @@
+/* ===============================
+   Estilos generales
+================================= */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ===============================
+   Contenedores principales
+================================= */
+#contenedor-principal {
+  display: flex;
+  gap: 30px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contenedor-tabla {
+  position: relative;
+  line-height: 0;
+}
+
+/* ===============================
+   Imagen base y capa interactiva
+================================= */
+#imagen-tabla {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#canvas-interactivo {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* ===============================
+   Contenedor de interacción
+================================= */
+#interaccion-elemento {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 0%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Texto dentro del contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: transparent;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   Clases utilitarias
+================================= */
+.oculto {
+  opacity: 0;
+  pointer-events: none;
+}
