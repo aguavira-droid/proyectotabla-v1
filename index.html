@@ -238,6 +238,7 @@
       if(!el){ infoPreview.innerHTML=''; return; }
       infoPreview.style.fontSize='';
       infoPreview.innerHTML=`
+        <div><strong>Amigo asociado:</strong> ${el.nombre_amigo ?? 'N/A'}</div>  
         <div style="font-weight:700; margin-bottom:6px; font-size:1.02em;">${el.nombre} <small style="opacity:0.86">(${el.simbolo})</small></div>
         <div><strong>Número atómico:</strong> ${el.propiedades?.numero_atomico ?? 'N/A'}</div>
         <div><strong>Masa atómica:</strong> ${el.propiedades?.masa_atomica ?? 'N/A'}</div>

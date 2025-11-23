@@ -8,6 +8,7 @@
     {
       "simbolo": "H",
       "nombre": "Hidrógeno",
+      "nombre_amigo": "Karl Marx",
       "posicion_x": -100,
       "posicion_y": 149,
       "ancho": 110,
@@ -18,6 +19,7 @@
     {
       "simbolo": "He",
       "nombre": "Helio",
+      "nombre_amigo": "Adam Smith",
       "posicion_x": 1770,
       "posicion_y": 149,
       "ancho": 110,
@@ -28,6 +30,7 @@
     {
       "simbolo": "Li",
       "nombre": "Litio",
+      "nombre_amigo": "Friedrich Engels",
       "posicion_x": -100,
       "posicion_y": 259,
       "ancho": 110,
@@ -38,6 +41,7 @@
     {
       "simbolo": "Be",
       "nombre": "Berilio",
+      "nombre_amigo": "Mijaíl Bakunin",
       "posicion_x": 10,
       "posicion_y": 259,
       "ancho": 110,
@@ -48,6 +52,7 @@
     {
       "simbolo": "B",
       "nombre": "Boro",
+      "nombre_amigo": "Edmund Burke",
       "posicion_x": 1220,
       "posicion_y": 259,
       "ancho": 110,
@@ -58,6 +63,7 @@
     {
       "simbolo": "C",
       "nombre": "Carbono",
+      "nombre_amigo": "Joseph de Maistre",
       "posicion_x": 1330,
       "posicion_y": 259,
       "ancho": 110,
@@ -68,6 +74,7 @@
     {
       "simbolo": "N",
       "nombre": "Nitrógeno",
+      "nombre_amigo": "Klemens von Metternich",
       "posicion_x": 1440,
       "posicion_y": 259,
       "ancho": 110,
@@ -78,6 +85,7 @@
     {
       "simbolo": "O",
       "nombre": "Oxígeno",
+      "nombre_amigo": "Juan Manuel de Rosas",
       "posicion_x": 1550,
       "posicion_y": 259,
       "ancho": 110,
@@ -88,6 +96,7 @@
     {
       "simbolo": "F",
       "nombre": "Flúor",
+      "nombre_amigo": "Benjamin Disraeli",
       "posicion_x": 1660,
       "posicion_y": 259,
       "ancho": 110,
@@ -98,6 +107,7 @@
     {
       "simbolo": "Ne",
       "nombre": "Neón",
+      "nombre_amigo": "Napoleón III",
       "posicion_x": 1770,
       "posicion_y": 259,
       "ancho": 110,
@@ -108,6 +118,7 @@
     {
       "simbolo": "Na",
       "nombre": "Sodio",
+      "nombre_amigo": "Simón Rodríguez",
       "posicion_x": -100,
       "posicion_y": 369,
       "ancho": 110,
@@ -118,6 +129,7 @@
     {
       "simbolo": "Mg",
       "nombre": "Magnesio",
+      "nombre_amigo": "José Martí",
       "posicion_x": 10,
       "posicion_y": 369,
       "ancho": 110,
@@ -128,6 +140,7 @@
     {
       "simbolo": "Al",
       "nombre": "Aluminio",
+      "nombre_amigo": "Otto von Bismarck",
       "posicion_x": 1220,
       "posicion_y": 369,
       "ancho": 110,
@@ -138,6 +151,7 @@
     {
       "simbolo": "Si",
       "nombre": "Silicio",
+      "nombre_amigo": "Antonio Cánovas del Castillo",
       "posicion_x": 1330,
       "posicion_y": 369,
       "ancho": 110,
@@ -148,6 +162,7 @@
     {
       "simbolo": "P",
       "nombre": "Fósforo",
+      "nombre_amigo": "Porfirio Díaz",
       "posicion_x": 1440,
       "posicion_y": 369,
       "ancho": 110,
@@ -158,6 +173,7 @@
     {
       "simbolo": "S",
       "nombre": "Azufre",
+      "nombre_amigo": "Leopoldo II de Bélgica",
       "posicion_x": 1550,
       "posicion_y": 369,
       "ancho": 110,
@@ -168,6 +184,7 @@
     {
       "simbolo": "Cl",
       "nombre": "Cloro",
+      "nombre_amigo": "Francisco Silvela",
       "posicion_x": 1660,
       "posicion_y": 369,
       "ancho": 110,
@@ -178,6 +195,7 @@
     {
       "simbolo": "Ar",
       "nombre": "Argón",
+      "nombre_amigo": "Theodore Roosevelt",
       "posicion_x": 1770,
       "posicion_y": 369,
       "ancho": 110,
@@ -188,6 +206,7 @@
     {
       "simbolo": "K",
       "nombre": "Potasio",
+      "nombre_amigo": "Rosa Luxemburgo",
       "posicion_x": -100,
       "posicion_y": 479,
       "ancho": 110,
@@ -198,6 +217,7 @@
     {
       "simbolo": "Ca",
       "nombre": "Calcio",
+      "nombre_amigo": "Leon Trotsky",
       "posicion_x": 10,
       "posicion_y": 479,
       "ancho": 110,
@@ -208,6 +228,7 @@
     {
       "simbolo": "Sc",
       "nombre": "Escandio",
+      "nombre_amigo": "Antonio Gramsci",
       "posicion_x": 120,
       "posicion_y": 479,
       "ancho": 110,
@@ -218,6 +239,7 @@
     {
       "simbolo": "Ti",
       "nombre": "Titanio",
+      "nombre_amigo": "Vladimir Lenin",
       "posicion_x": 230,
       "posicion_y": 479,
       "ancho": 110,
@@ -228,6 +250,7 @@
     {
       "simbolo": "V",
       "nombre": "Vanadio",
+      "nombre_amigo": "Ho Chi Minh",
       "posicion_x": 340,
       "posicion_y": 479,
       "ancho": 110,
@@ -238,6 +261,7 @@
     {
       "simbolo": "Cr",
       "nombre": "Cromo",
+      "nombre_amigo": "Mao Zedong",
       "posicion_x": 450,
       "posicion_y": 479,
       "ancho": 110,
@@ -248,6 +272,7 @@
     {
       "simbolo": "Mn",
       "nombre": "Manganeso",
+      "nombre_amigo": "Che Guevara",
       "posicion_x": 560,
       "posicion_y": 479,
       "ancho": 110,
@@ -258,6 +283,7 @@
     {
       "simbolo": "Fe",
       "nombre": "Hierro",
+      "nombre_amigo": "Fidel Castro",
       "posicion_x": 670,
       "posicion_y": 479,
       "ancho": 110,
@@ -268,6 +294,7 @@
     {
       "simbolo": "Co",
       "nombre": "Cobalto",
+      "nombre_amigo": "José Carlos Mariátegui",
       "posicion_x": 780,
       "posicion_y": 479,
       "ancho": 110,
@@ -278,6 +305,7 @@
     {
       "simbolo": "Ni",
       "nombre": "Níquel",
+      "nombre_amigo": "Winston Churchill",
       "posicion_x": 890,
       "posicion_y": 479,
       "ancho": 110,
@@ -288,6 +316,7 @@
     {
       "simbolo": "Cu",
       "nombre": "Cobre",
+      "nombre_amigo": "Syngman Rhee",
       "posicion_x": 1000,
       "posicion_y": 479,
       "ancho": 110,
@@ -298,6 +327,7 @@
     {
       "simbolo": "Zn",
       "nombre": "Zinc",
+      "nombre_amigo": "Konrad Adenauer",
       "posicion_x": 1110,
       "posicion_y": 479,
       "ancho": 110,
@@ -308,6 +338,7 @@
     {
       "simbolo": "Ga",
       "nombre": "Galio",
+      "nombre_amigo": "Chiang Kai-shek",
       "posicion_x": 1220,
       "posicion_y": 479,
       "ancho": 110,
@@ -318,6 +349,7 @@
     {
       "simbolo": "Ge",
       "nombre": "Germanio",
+      "nombre_amigo": "António de Oliveira Salazar",
       "posicion_x": 1330,
       "posicion_y": 479,
       "ancho": 110,
@@ -328,6 +360,7 @@
     {
       "simbolo": "As",
       "nombre": "Arsénico",
+      "nombre_amigo": "Charles de Gaulle",
       "posicion_x": 1440,
       "posicion_y": 479,
       "ancho": 110,
@@ -338,6 +371,7 @@
     {
       "simbolo": "Se",
       "nombre": "Selenio",
+      "nombre_amigo": "Francisco Franco",
       "posicion_x": 1550,
       "posicion_y": 479,
       "ancho": 110,
@@ -348,6 +382,7 @@
     {
       "simbolo": "Br",
       "nombre": "Bromo",
+      "nombre_amigo": "Friedrich Hayek",
       "posicion_x": 1660,
       "posicion_y": 479,
       "ancho": 110,
@@ -358,6 +393,7 @@
     {
       "simbolo": "Kr",
       "nombre": "Kriptón",
+      "nombre_amigo": "Ronald Reagan",
       "posicion_x": 1770,
       "posicion_y": 479,
       "ancho": 110,
@@ -368,6 +404,7 @@
     {
       "simbolo": "Rb",
       "nombre": "Rubidio",
+      "nombre_amigo": "Subhas Chandra Bose",
       "posicion_x": -100,
       "posicion_y": 589,
       "ancho": 110,
@@ -378,6 +415,7 @@
     {
       "simbolo": "Sr",
       "nombre": "Estroncio",
+      "nombre_amigo": "Frantz Fanon",
       "posicion_x": 10,
       "posicion_y": 589,
       "ancho": 110,
@@ -388,6 +426,7 @@
     {
       "simbolo": "Y",
       "nombre": "Itrio",
+      "nombre_amigo": "Pol Pot",
       "posicion_x": 120,
       "posicion_y": 589,
       "ancho": 110,
@@ -398,6 +437,7 @@
     {
       "simbolo": "Zr",
       "nombre": "Circonio",
+      "nombre_amigo": "Salvador Allende",
       "posicion_x": 230,
       "posicion_y": 589,
       "ancho": 110,
@@ -408,6 +448,7 @@
     {
       "simbolo": "Nb",
       "nombre": "Niobio",
+      "nombre_amigo": "Thomas Sankara",
       "posicion_x": 340,
       "posicion_y": 589,
       "ancho": 110,
@@ -418,6 +459,7 @@
     {
       "simbolo": "Mo",
       "nombre": "Molibdeno",
+      "nombre_amigo": "Angela Davis",
       "posicion_x": 450,
       "posicion_y": 589,
       "ancho": 110,
@@ -428,6 +470,7 @@
     {
       "simbolo": "Tc",
       "nombre": "Tecnecio",
+      "nombre_amigo": "Hugo Chávez",
       "posicion_x": 560,
       "posicion_y": 589,
       "ancho": 110,
@@ -438,6 +481,7 @@
     {
       "simbolo": "Ru",
       "nombre": "Rutenio",
+      "nombre_amigo": "Luiz Inácio Lula da Silva",
       "posicion_x": 670,
       "posicion_y": 589,
       "ancho": 110,
@@ -448,6 +492,7 @@
     {
       "simbolo": "Rh",
       "nombre": "Rodio",
+      "nombre_amigo": "Rafael Correa",
       "posicion_x": 780,
       "posicion_y": 589,
       "ancho": 110,
@@ -458,6 +503,7 @@
     {
       "simbolo": "Pd",
       "nombre": "Paladio",
+      "nombre_amigo": "Milton Friedman",
       "posicion_x": 890,
       "posicion_y": 589,
       "ancho": 110,
@@ -468,6 +514,7 @@
     {
       "simbolo": "Ag",
       "nombre": "Plata",
+      "nombre_amigo": "Richard Nixon",
       "posicion_x": 1000,
       "posicion_y": 589,
       "ancho": 110,
@@ -478,6 +525,7 @@
     {
       "simbolo": "Cd",
       "nombre": "Cadmio",
+      "nombre_amigo": "Menachem Begin",
       "posicion_x": 1110,
       "posicion_y": 589,
       "ancho": 110,
@@ -488,6 +536,7 @@
     {
       "simbolo": "In",
       "nombre": "Indio",
+      "nombre_amigo": "Augusto Pinochet",
       "posicion_x": 1220,
       "posicion_y": 589,
       "ancho": 110,
@@ -498,6 +547,7 @@
     {
       "simbolo": "Sn",
       "nombre": "Estaño",
+      "nombre_amigo": "Park Chung-hee",
       "posicion_x": 1330,
       "posicion_y": 589,
       "ancho": 110,
@@ -508,6 +558,7 @@
     {
       "simbolo": "Sb",
       "nombre": "Antimonio",
+      "nombre_amigo": "Lee Kuan Yew",
       "posicion_x": 1440,
       "posicion_y": 589,
       "ancho": 110,
@@ -518,6 +569,7 @@
     {
       "simbolo": "Te",
       "nombre": "Telurio",
+      "nombre_amigo": "George H. W. Bush",
       "posicion_x": 1550,
       "posicion_y": 589,
       "ancho": 110,
@@ -528,6 +580,7 @@
     {
       "simbolo": "I",
       "nombre": "Yodo",
+      "nombre_amigo": "Margaret Thatcher",
       "posicion_x": 1660,
       "posicion_y": 589,
       "ancho": 110,
@@ -538,6 +591,7 @@
     {
       "simbolo": "Xe",
       "nombre": "Xenón",
+      "nombre_amigo": "Helmut Kohl",
       "posicion_x": 1770,
       "posicion_y": 589,
       "ancho": 110,
@@ -548,6 +602,7 @@
     {
       "simbolo": "Cs",
       "nombre": "Cesio",
+      "nombre_amigo": "Nicolás Maduro",
       "posicion_x": -100,
       "posicion_y": 699,
       "ancho": 110,
@@ -558,6 +613,7 @@
     {
       "simbolo": "Ba",
       "nombre": "Bario",
+      "nombre_amigo": "Bernie Sanders",
       "posicion_x": 10,
       "posicion_y": 699,
       "ancho": 110,
@@ -568,6 +624,7 @@
     {
       "simbolo": "Lu",
       "nombre": "Lutecio",
+      "nombre_amigo": "Jeremy Corbyn",
       "posicion_x": 120,
       "posicion_y": 699,
       "ancho": 110,
@@ -578,6 +635,7 @@
     {
       "simbolo": "Hf",
       "nombre": "Hafnio",
+      "nombre_amigo": "Francisco Largo Caballero",
       "posicion_x": 230,
       "posicion_y": 699,
       "ancho": 110,
@@ -588,6 +646,7 @@
     {
       "simbolo": "Ta",
       "nombre": "Tantalio",
+      "nombre_amigo": "Julián Besteiro",
       "posicion_x": 340,
       "posicion_y": 699,
       "ancho": 110,
@@ -598,6 +657,7 @@
     {
       "simbolo": "W",
       "nombre": "Wolframio",
+      "nombre_amigo": "Lluís Companys",
       "posicion_x": 450,
       "posicion_y": 699,
       "ancho": 110,
@@ -608,6 +668,7 @@
     {
       "simbolo": "Re",
       "nombre": "Renio",
+      "nombre_amigo": "Indalecio Prieto",
       "posicion_x": 560,
       "posicion_y": 699,
       "ancho": 110,
@@ -618,6 +679,7 @@
     {
       "simbolo": "Os",
       "nombre": "Osmio",
+      "nombre_amigo": "Joan Comorera",
       "posicion_x": 670,
       "posicion_y": 699,
       "ancho": 110,
@@ -628,6 +690,7 @@
     {
       "simbolo": "Ir",
       "nombre": "Iridio",
+      "nombre_amigo": "Juan Negrín",
       "posicion_x": 780,
       "posicion_y": 699,
       "ancho": 110,
@@ -638,6 +701,7 @@
     {
       "simbolo": "Pt",
       "nombre": "Platino",
+      "nombre_amigo": "Dolores Ibárruri",
       "posicion_x": 890,
       "posicion_y": 699,
       "ancho": 110,
@@ -648,6 +712,7 @@
     {
       "simbolo": "Au",
       "nombre": "Oro",
+      "nombre_amigo": "Andreu Nin",
       "posicion_x": 1000,
       "posicion_y": 699,
       "ancho": 110,
@@ -658,6 +723,7 @@
     {
       "simbolo": "Hg",
       "nombre": "Mercurio",
+      "nombre_amigo": "Enrique Líster",
       "posicion_x": 1110,
       "posicion_y": 699,
       "ancho": 110,
@@ -668,6 +734,7 @@
     {
       "simbolo": "Tl",
       "nombre": "Talio",
+      "nombre_amigo": "Federica Montseny",
       "posicion_x": 1220,
       "posicion_y": 699,
       "ancho": 110,
@@ -678,6 +745,7 @@
     {
       "simbolo": "Pb",
       "nombre": "Plomo",
+      "nombre_amigo": "Buenaventura Durruti",
       "posicion_x": 1330,
       "posicion_y": 699,
       "ancho": 110,
@@ -688,6 +756,7 @@
     {
       "simbolo": "Bi",
       "nombre": "Bismuto",
+      "nombre_amigo": "Gregorio López Raimundo",
       "posicion_x": 1440,
       "posicion_y": 699,
       "ancho": 110,
@@ -698,6 +767,7 @@
     {
       "simbolo": "Po",
       "nombre": "Polonio",
+      "nombre_amigo": "Santiago Carrillo",
       "posicion_x": 1550,
       "posicion_y": 699,
       "ancho": 110,
@@ -708,6 +778,7 @@
     {
       "simbolo": "At",
       "nombre": "Astato",
+      "nombre_amigo": "Marcelino Camacho",
       "posicion_x": 1660,
       "posicion_y": 699,
       "ancho": 110,
@@ -718,6 +789,7 @@
     {
       "simbolo": "Rn",
       "nombre": "Radón",
+      "nombre_amigo": "Pablo Iglesias",
       "posicion_x": 1770,
       "posicion_y": 699,
       "ancho": 110,
@@ -728,6 +800,7 @@
     {
       "simbolo": "Fr",
       "nombre": "Francio",
+      "nombre_amigo": "Gabriel Boric",
       "posicion_x": -100,
       "posicion_y": 809,
       "ancho": 110,
@@ -738,6 +811,7 @@
     {
       "simbolo": "Ra",
       "nombre": "Radio",
+      "nombre_amigo": "Evo Morales",
       "posicion_x": 10,
       "posicion_y": 809,
       "ancho": 110,
@@ -748,6 +822,7 @@
     {
       "simbolo": "Lr",
       "nombre": "Lawrencio",
+      "nombre_amigo": "Cheddi Jagan",
       "posicion_x": 120,
       "posicion_y": 809,
       "ancho": 110,
@@ -758,6 +833,7 @@
     {
       "simbolo": "Rf",
       "nombre": "Rutherfordio",
+      "nombre_amigo": "Michael Manley",
       "posicion_x": 230,
       "posicion_y": 809,
       "ancho": 110,
@@ -768,6 +844,7 @@
     {
       "simbolo": "Db",
       "nombre": "Dubnio",
+      "nombre_amigo": "Última figura izquierda histórica",
       "posicion_x": 340,
       "posicion_y": 809,
       "ancho": 110,
@@ -778,6 +855,7 @@
     {
       "simbolo": "Sg",
       "nombre": "Seaborgio",
+      "nombre_amigo": "Alberto Fujimori",
       "posicion_x": 450,
       "posicion_y": 809,
       "ancho": 110,
@@ -788,6 +866,7 @@
     {
       "simbolo": "Bh",
       "nombre": "Bohrio",
+      "nombre_amigo": "Juan Carlos I",
       "posicion_x": 560,
       "posicion_y": 809,
       "ancho": 110,
@@ -798,6 +877,7 @@
     {
       "simbolo": "Hs",
       "nombre": "Hassio",
+      "nombre_amigo": "George W. Bush",
       "posicion_x": 670,
       "posicion_y": 809,
       "ancho": 110,
@@ -808,6 +888,7 @@
     {
       "simbolo": "Mt",
       "nombre": "Meitnerio",
+      "nombre_amigo": "Donald Trump",
       "posicion_x": 780,
       "posicion_y": 809,
       "ancho": 110,
@@ -818,6 +899,7 @@
     {
       "simbolo": "Ds",
       "nombre": "Darmstadtio",
+      "nombre_amigo": "Benjamín Netanyahu",
       "posicion_x": 890,
       "posicion_y": 809,
       "ancho": 110,
@@ -828,6 +910,7 @@
     {
       "simbolo": "Rg",
       "nombre": "Roentgenio",
+      "nombre_amigo": "Sebastián Piñera",
       "posicion_x": 1000,
       "posicion_y": 809,
       "ancho": 110,
@@ -838,6 +921,7 @@
     {
       "simbolo": "Cn",
       "nombre": "Copernicio",
+      "nombre_amigo": "Jarosław Kaczyński",
       "posicion_x": 1110,
       "posicion_y": 809,
       "ancho": 110,
@@ -848,6 +932,7 @@
     {
       "simbolo": "Nh",
       "nombre": "Nihonio",
+      "nombre_amigo": "Narendra Modi",
       "posicion_x": 1220,
       "posicion_y": 809,
       "ancho": 110,
@@ -858,6 +943,7 @@
     {
       "simbolo": "Fl",
       "nombre": "Flerovio",
+      "nombre_amigo": "José María Aznar",
       "posicion_x": 1330,
       "posicion_y": 809,
       "ancho": 110,
@@ -868,6 +954,7 @@
     {
       "simbolo": "Mc",
       "nombre": "Moscovio",
+      "nombre_amigo": "Leonel Brizola",
       "posicion_x": 1440,
       "posicion_y": 809,
       "ancho": 110,
@@ -878,6 +965,7 @@
     {
       "simbolo": "Lv",
       "nombre": "Livermorio",
+      "nombre_amigo": "Pierre Bourdieu",
       "posicion_x": 1550,
       "posicion_y": 809,
       "ancho": 110,
@@ -888,6 +976,7 @@
     {
       "simbolo": "Ts",
       "nombre": "Tenesino",
+      "nombre_amigo": "Naomi Klein",
       "posicion_x": 1660,
       "posicion_y": 809,
       "ancho": 110,
@@ -898,6 +987,7 @@
     {
       "simbolo": "Og",
       "nombre": "Oganesón",
+      "nombre_amigo": "Xosé Manuel Beiras",
       "posicion_x": 1770,
       "posicion_y": 809,
       "ancho": 110,
@@ -908,6 +998,7 @@
     {
       "simbolo": "La",
       "nombre": "Lantano",
+      "nombre_amigo": "Julio Anguita",
       "posicion_x": 340,
       "posicion_y": 1029,
       "ancho": 110,
@@ -918,6 +1009,7 @@
     {
       "simbolo": "Ce",
       "nombre": "Cerio",
+      "nombre_amigo": "Gerardo Iglesias",
       "posicion_x": 450,
       "posicion_y": 1029,
       "ancho": 110,
@@ -928,6 +1020,7 @@
     {
       "simbolo": "Pr",
       "nombre": "Praseodimio",
+      "nombre_amigo": "Cayo Lara",
       "posicion_x": 560,
       "posicion_y": 1029,
       "ancho": 110,
@@ -938,6 +1031,7 @@
     {
       "simbolo": "Nd",
       "nombre": "Neodimio",
+      "nombre_amigo": "Arnaldo Otegi",
       "posicion_x": 670,
       "posicion_y": 1029,
       "ancho": 110,
@@ -948,6 +1042,7 @@
     {
       "simbolo": "Pm",
       "nombre": "Prometio",
+      "nombre_amigo": "Gaspar Llamazares",
       "posicion_x": 780,
       "posicion_y": 1029,
       "ancho": 110,
@@ -958,6 +1053,7 @@
     {
       "simbolo": "Sm",
       "nombre": "Samario",
+      "nombre_amigo": "Ada Colau",
       "posicion_x": 890,
       "posicion_y": 1029,
       "ancho": 110,
@@ -968,6 +1064,7 @@
     {
       "simbolo": "Eu",
       "nombre": "Europio",
+      "nombre_amigo": "Oskar Matute",
       "posicion_x": 1000,
       "posicion_y": 1029,
       "ancho": 110,
@@ -978,6 +1075,7 @@
     {
       "simbolo": "Gd",
       "nombre": "Gadolinio",
+      "nombre_amigo": "Yolanda Díaz",
       "posicion_x": 1110,
       "posicion_y": 1029,
       "ancho": 110,
@@ -988,6 +1086,7 @@
     {
       "simbolo": "Tb",
       "nombre": "Terbio",
+      "nombre_amigo": "Pablo Iglesias Turrión",
       "posicion_x": 1220,
       "posicion_y": 1029,
       "ancho": 110,
@@ -998,6 +1097,7 @@
     {
       "simbolo": "Dy",
       "nombre": "Disprosio",
+      "nombre_amigo": "Gabriel Rufián",
       "posicion_x": 1330,
       "posicion_y": 1029,
       "ancho": 110,
@@ -1008,6 +1108,7 @@
     {
       "simbolo": "Ho",
       "nombre": "Holmio",
+      "nombre_amigo": "Ione Belarra",
       "posicion_x": 1440,
       "posicion_y": 1029,
       "ancho": 110,
@@ -1018,6 +1119,7 @@
     {
       "simbolo": "Er",
       "nombre": "Erbio",
+      "nombre_amigo": "Irene Montero",
       "posicion_x": 1550,
       "posicion_y": 1029,
       "ancho": 110,
@@ -1028,6 +1130,7 @@
     {
       "simbolo": "Tm",
       "nombre": "Tulio",
+      "nombre_amigo": "Alberto Garzón",
       "posicion_x": 1660,
       "posicion_y": 1029,
       "ancho": 110,
@@ -1038,6 +1141,7 @@
     {
       "simbolo": "Yb",
       "nombre": "Iterbio",
+      "nombre_amigo": "Noam Chomsky",
       "posicion_x": 1770,
       "posicion_y": 1029,
       "ancho": 110,
@@ -1048,6 +1152,7 @@
     {
       "simbolo": "Ac",
       "nombre": "Actinio",
+      "nombre_amigo": "Arundhati Roy",
       "posicion_x": 340,
       "posicion_y": 1139,
       "ancho": 110,
@@ -1058,6 +1163,7 @@
     {
       "simbolo": "Th",
       "nombre": "Torio",
+      "nombre_amigo": "Olof Palme",
       "posicion_x": 450,
       "posicion_y": 1139,
       "ancho": 110,
@@ -1068,6 +1174,7 @@
     {
       "simbolo": "Pa",
       "nombre": "Protactinio",
+      "nombre_amigo": "José Luis Rodríguez Zapatero",
       "posicion_x": 560,
       "posicion_y": 1139,
       "ancho": 110,
@@ -1078,6 +1185,7 @@
     {
       "simbolo": "U",
       "nombre": "Uranio",
+      "nombre_amigo": "Salvador Allende (histórico)",
       "posicion_x": 670,
       "posicion_y": 1139,
       "ancho": 110,
@@ -1088,6 +1196,7 @@
     {
       "simbolo": "Np",
       "nombre": "Neptunio",
+      "nombre_amigo": "Luiz Inácio Lula da Silva (contemporáneo)",
       "posicion_x": 780,
       "posicion_y": 1139,
       "ancho": 110,
@@ -1098,6 +1207,7 @@
     {
       "simbolo": "Pu",
       "nombre": "Plutonio",
+      "nombre_amigo": "Angela Merkel",
       "posicion_x": 890,
       "posicion_y": 1139,
       "ancho": 110,
@@ -1108,6 +1218,7 @@
     {
       "simbolo": "Am",
       "nombre": "Americio",
+      "nombre_amigo": "Recep Tayyip Erdoğan",
       "posicion_x": 1000,
       "posicion_y": 1139,
       "ancho": 110,
@@ -1118,6 +1229,7 @@
     {
       "simbolo": "Cm",
       "nombre": "Curio",
+      "nombre_amigo": "Abdel Fattah el-Sisi",
       "posicion_x": 1110,
       "posicion_y": 1139,
       "ancho": 110,
@@ -1128,6 +1240,7 @@
     {
       "simbolo": "Bk",
       "nombre": "Berkelio",
+      "nombre_amigo": "Shinzo Abe",
       "posicion_x": 1220,
       "posicion_y": 1139,
       "ancho": 110,
@@ -1138,6 +1251,7 @@
     {
       "simbolo": "Cf",
       "nombre": "Californio",
+      "nombre_amigo": "Mariano Rajoy",
       "posicion_x": 1330,
       "posicion_y": 1139,
       "ancho": 110,
@@ -1148,6 +1262,7 @@
     {
       "simbolo": "Es",
       "nombre": "Einsteinio",
+      "nombre_amigo": "Nicolas Sarkozy",
       "posicion_x": 1440,
       "posicion_y": 1139,
       "ancho": 110,
@@ -1158,6 +1273,7 @@
     {
       "simbolo": "Fm",
       "nombre": "Fermio",
+      "nombre_amigo": "Felipe Calderón",
       "posicion_x": 1550,
       "posicion_y": 1139,
       "ancho": 110,
@@ -1168,6 +1284,7 @@
     {
       "simbolo": "Md",
       "nombre": "Mendelevio",
+      "nombre_amigo": "Viktor Orbán",
       "posicion_x": 1660,
       "posicion_y": 1139,
       "ancho": 110,
@@ -1178,6 +1295,7 @@
     {
       "simbolo": "No",
       "nombre": "Nobelio",
+      "nombre_amigo": "Mateusz Morawiecki",
       "posicion_x": 1770,
       "posicion_y": 1139,
       "ancho": 110,
